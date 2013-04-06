@@ -1,0 +1,295 @@
+//
+// Variables
+// --------------------------------------------------
+
+// Grays
+// -------------------------
+
+@grayDarker:            #111;
+@grayDark:              #333;
+@gray:                  #666;
+@grayLight:             #999;
+@grayLighter:           #eee;
+
+// Brand colors
+// -------------------------
+
+@brand-primary:         #3399CC;
+@brand-success:         #00CC00;
+@brand-warning:         #FF6600;
+@brand-danger:          #CC0000;
+@brand-info:            #009999;
+
+// Scaffolding
+// -------------------------
+
+@body-background:       #fff;
+@text-color:            @grayDark;
+
+// Links
+// -------------------------
+
+@link-color:            #3399CC;
+@link-color-hover:      darken(@link-color, 15%);
+
+// Typography
+// -------------------------
+
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Consolas, "Liberation Mono", Courier, monospace;
+@font-family-base:        @font-family-monospace;
+
+@font-size-base:          10.5pt;
+@font-size-large:         @font-size-base * 1.25; // ~18px
+@font-size-small:         @font-size-base * 0.85; // ~12px
+@font-size-mini:          @font-size-base * 0.75; // ~11px
+
+@line-height-base:        1.5;
+
+@headings-font-family:    inherit; // empty to use BS default, @font-family-base
+@headings-font-weight:    500;
+
+
+// Component sizing
+// -------------------------
+// Based on 10.5pt font-size and 1.5 line-height
+
+@padding-large:           8.25pt 10.5pt; // 33pt
+@padding-small:           1.5pt 7.5pt;  // 19.5pt
+@padding-mini:            0 4.5pt;   // 16.5pt
+
+
+@border-radius-base:      3pt;
+@border-radius-large:     4.5pt;
+@border-radius-small:     2.25pt;
+
+
+// Tables
+// -------------------------
+
+@table-background:                   transparent;
+@table-background-accent:            #f9f9f9;
+@table-background-hover:             #f5f5f5;
+
+@table-border:                       0.75pt solid #ddd;
+
+
+// Buttons
+// -------------------------
+@caret-color: 						 #C0C0C0;
+@btn-color:                          #505050;
+@btn-background:                     #f0f0f0;
+@btn-border:                         darken(@btn-background,10%);
+
+@btn-background-primary:             @brand-primary;
+@btn-border-primary:                 @btn-background-primary;
+
+@btn-background-success:             @brand-success;
+@btn-border-success:                 @btn-background-success;
+
+@btn-background-warning:             @brand-warning;
+@btn-border-warning:                 @btn-background-warning;
+
+@btn-background-danger:              @brand-danger;
+@btn-border-danger:                  @btn-background-danger;
+
+@btn-background-info:                @brand-info;
+@btn-border-info:                    @btn-background-info;
+
+
+
+// Forms
+// -------------------------
+
+@input-background:               #fff;
+@input-background-disabled:      @grayLighter;
+
+@input-border:                   #ccc;
+@input-border-radius:            @border-radius-base;
+@input-border-radius-search:     15pt;
+
+@input-color-placeholder:        @grayLight;
+
+// adjust min-height on input sizes
+
+
+@form-actions-background:        #f5f5f5;
+// divider
+@divider-color:					#e5e5e5;
+
+// Dropdowns
+// -------------------------
+
+@dropdown-background:            #fff;
+@dropdown-border:                rgba(0,0,0,.15);
+@dropdown-divider-top:           #e5e5e5;
+@dropdown-divider-bottom:        #fff;
+
+@dropdown-link-color:            @grayDark;
+@dropdown-link-color-hover:      #fff;
+@dropdown-link-color-active:     #fff;
+
+@dropdown-link-background-active:  @link-color;
+@dropdown-link-background-hover:   @dropdown-link-background-active;
+
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+
+@zindex-dropdown:          1000;
+@zindex-popover:           1010;
+@zindex-tooltip:           1030;
+@zindex-navbar-fixed:      1030;
+@zindex-modal-background:  1040;
+@zindex-modal:             1050;
+
+
+// Glyphicons font path
+// -------------------------
+@glyphicons-font-path:          "../fonts";
+
+
+// Navbar
+// -------------------------
+
+// Responsive collapsing
+// @navbar-collapse-width:            734.25pt;
+// @navbar-collapse-width-desktop:    @navbar-collapse-width + 1;
+
+// Basics of a navbar
+@navbar-height:                    37.5pt;
+@navbar-text:                      #777;
+@navbar-bg:                        #333;
+
+// Navbar links
+@navbar-link-color:                #777;
+@navbar-link-color-hover:          #333;
+@navbar-link-color-active:         #555;
+@navbar-link-bg-hover:             transparent;
+
+// Navbar brand label
+@navbar-brand-color:               @navbar-link-color;
+@navbar-brand-color-hover:         darken(@navbar-link-color, 10%);
+@navbar-brand-bg-hover:            transparent;
+@navbar-link-bg-active:            darken(@navbar-bg, 10%);
+
+// Inverted navbar
+@navbar-inverse-text:                       @grayLight;
+@navbar-inverse-bg:                         #222;
+
+// Inverted navbar links
+@navbar-inverse-link-color:                 @grayLight;
+@navbar-inverse-link-color-hover:           #fff;
+@navbar-inverse-link-color-active:          @navbar-inverse-link-color-hover;
+@navbar-inverse-link-bg-hover:              transparent;
+@navbar-inverse-link-bg-active:             @navbar-inverse-bg;
+
+// Inverted navbar brand label
+@navbar-inverse-brand-color:                @navbar-inverse-link-color;
+@navbar-inverse-brand-color-hover:          darken(@navbar-inverse-link-color, 10%);
+@navbar-inverse-brand-bg-hover:             transparent;
+
+// Inverted navbar search
+// Normal navbar needs no special styles or vars
+@navbar-inverse-search-background:          lighten(@navbar-inverse-bg, 25%);
+@navbar-inverse-search-background-focus:    #fff;
+@navbar-inverse-search-border:              @navbar-inverse-bg;
+@navbar-inverse-search-placeholder-color:   #ccc;
+
+//tabs
+@bartabs-bg:                        		#fff;
+
+// Pagination
+// -------------------------
+
+@pagination-background:                #fff;
+@pagination-background-active:         #f5f5f5;
+@pagination-border:                    #ddd;
+
+
+// Jumbotron
+// -------------------------
+
+@jumbotron-background:           @grayLighter;
+@jumbotron-heading-color:        inherit;
+@jumbotron-lead-color:           inherit;
+
+
+// Form states and alerts
+// -------------------------
+
+@state-warning-text:             #c09853;
+@state-warning-background:       #fcf8e3;
+@state-warning-border:           darken(spin(@state-warning-background, -10), 3%);
+
+@state-error-text:               #b94a48;
+@state-error-background:         #f2dede;
+@state-error-border:             darken(spin(@state-error-background, -10), 3%);
+
+@state-success-text:             #468847;
+@state-success-background:       #dff0d8;
+@state-success-border:           darken(spin(@state-success-background, -10), 5%);
+
+@state-info-text:                #3a87ad;
+@state-info-background:          #d9edf7;
+@state-info-border:              darken(spin(@state-info-background, -10), 7%);
+
+
+// Tooltips and popovers
+// -------------------------
+@tooltip-color:               #fff;
+@tooltip-background:          rgba(0,0,0,.9);
+@tooltip-arrow-width:         3.75pt;
+@tooltip-arrow-color:         @tooltip-background;
+
+@popover-background:          #fff;
+@popover-arrow-width:         7.5pt;
+@popover-arrow-color:         #fff;
+@popover-title-background:    darken(@popover-background, 3%);
+
+// Special enhancement for popovers
+@popover-arrow-outer-width:   @popover-arrow-width + 1;
+@popover-arrow-outer-color:   rgba(0,0,0,.25);
+
+
+// Progress bars
+// -------------------------
+@progress-bg:                 #f5f5f5;
+@progress-bar-bg:             @brand-primary;
+@progress-bar-success-bg:     @brand-success;
+@progress-bar-warning-bg:     @brand-warning;
+@progress-bar-danger-bg:      @brand-danger;
+@progress-bar-info-bg:        @brand-info;
+
+
+// Miscellaneous
+// -------------------------
+
+// Hr border color
+@hr-border:                   @grayLighter;
+
+// Horizontal forms & lists
+@component-offset-horizontal: 140pt;
+
+// Wells
+@well-background:             #f5f5f5;
+
+
+
+// GRID
+// --------------------------------------------------
+
+// Default 720pt grid
+@grid-max-columns:          30;
+@grid-columns:              12;
+@grid-column-width:         45pt;
+@grid-gutter-width:         15pt;
+@grid-row-width:            (@grid-columns * @grid-column-width);

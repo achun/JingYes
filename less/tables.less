@@ -1,0 +1,113 @@
+//
+// Tables
+
+table {
+  max-width: 100%;
+  background-color: @table-background;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.condensed {
+  width: 100%;
+  th,
+  td {
+    padding: 3pt 3.75pt;
+  }
+}
+
+.tables table {
+  width: 100%;
+  border-radius:@border-radius-base;
+  border: @table-border;
+  margin-bottom: @line-height-base;
+  th,
+  td {
+    padding: 6pt;
+    line-height: @line-height-base;
+    text-align: left;
+    vertical-align: top;
+    border-top: @table-border;
+    border-left: @table-border;
+  }
+  th {
+    font-weight: bold;
+  }
+  thead th,
+  thead td
+  {
+    border-top: 0;
+    vertical-align: bottom;
+  }
+  th:first-child,
+  td:first-child
+  {
+    border-left: 0;
+  }
+  // Account for multiple tbody instances
+  tbody + tbody {
+    border-top: @table-border;
+  }
+
+  // Nesting
+  table {
+    background-color: @body-background;
+  }
+  // TABLE BACKGROUNDS
+  // -----------------
+  // Exact selectors below required to override .tables-striped
+
+  tbody tr {
+    &.success > td {
+      background-color: @state-success-background;
+    }
+    &.error > td {
+      background-color: @state-error-background;
+    }
+    &.warning > td {
+      background-color: @state-warning-background;
+    }
+  }
+}
+
+// ZEBRA-STRIPING
+// --------------
+
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.tables table:not(.striped-none) {
+  > tbody {
+    > tr:nth-child(even) > td,
+    > tr:nth-child(even) > th {
+      background-color: @table-background-accent;
+    }
+  }
+  > tbody:nth-child(even){
+    background-color: @table-background-accent;
+  }
+}
+
+
+
+// HOVER EFFECT
+// ------------
+// Placed here since it has to come after the potential zebra striping
+.tables table:not(.hover-none) {
+  tbody {
+    tr:hover > td,
+    tr:hover > th {
+      background-color: @table-background-hover;
+    }
+  }
+  // Hover states for .tables-hover
+  tbody tr {
+    &.success:hover > td {
+      background-color: darken(@state-success-background, 5%);
+    }
+    &.error:hover > td {
+      background-color: darken(@state-error-background, 5%);
+    }
+    &.warning:hover > td {
+      background-color: darken(@state-warning-background, 5%);
+    }
+  }
+}

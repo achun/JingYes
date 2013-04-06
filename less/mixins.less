@@ -1,0 +1,512 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// Utilities
+// -------------------------
+
+// Clearfix
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+.clear_float() {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Webkit-style focus
+.tab-focus() {
+  // Default
+  outline: thin dotted #333;
+  // Webkit
+  outline: 3.75pt auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+// Center-align a block level element
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Sizing shortcuts
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+.square(@size) {
+  .size(@size, @size);
+}
+
+// Placeholder text
+.placeholder(@color: @input-color-placeholder) {
+  &:-moz-placeholder {
+    color: @color;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+}
+
+// Text overflow
+// Requires inline-block or block for proper styling
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// CSS image replacement
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+.hide-text() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+
+// FONTS
+// --------------------------------------------------
+
+#font {
+  #family {
+    .serif() {
+      font-family: @font-family-serif;
+    }
+    .sans-serif() {
+      font-family: @font-family-sans-serif;
+    }
+    .monospace() {
+      font-family: @font-family-monospace;
+    }
+  }
+  .shorthand(@size: @font-size-base, @weight: normal, @lineHeight: @line-height-base) {
+    font-size: @size;
+    font-weight: @weight;
+    line-height: @lineHeight;
+  }
+  .serif(@size: @font-size-base, @weight: normal, @lineHeight: @line-height-base) {
+    #font > #family > .serif;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+  .sans-serif(@size: @font-size-base, @weight: normal, @lineHeight: @line-height-base) {
+    #font > #family > .sans-serif;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+  .monospace(@size: @font-size-base, @weight: normal, @lineHeight: @line-height-base) {
+    #font > #family > .monospace;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+}
+
+
+// FORMS
+// --------------------------------------------------
+
+.formFieldState(@text-color: #555, @border-color: #ccc, @background-color: #f5f5f5) {
+  // Color the label text
+  .control-label {
+    color: @text-color;
+  }
+  // Set the border and box shadow on specific inputs to match
+  .input-with-feedback {
+    padding-right: 24pt; // to account for the feedback icon
+    border-color: @border-color;
+    .box-shadow(inset 0 0.75pt 0.75pt rgba(0,0,0,.075)); // Redeclare so transitions work
+    &:focus {
+      border-color: darken(@border-color, 10%);
+      @shadow: inset 0 0.75pt 0.75pt rgba(0,0,0,.075), 0 0 4.5pt lighten(@border-color, 20%);
+      .box-shadow(@shadow);
+    }
+  }
+}
+
+
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Single side border-radius
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+   border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+     border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+   border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+     border-top-left-radius: @radius;
+}
+
+.box-shadow(@shadow) {
+  box-shadow: @shadow;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+     -moz-transition-delay: @transition-delay;
+       -o-transition-delay: @transition-delay;
+          transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+     -moz-transition-duration: @transition-duration;
+       -o-transition-duration: @transition-duration;
+          transition-duration: @transition-duration;
+}
+
+// Transformations
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+     -moz-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees);
+       -o-transform: rotate(@degrees);
+          transform: rotate(@degrees);
+}
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+     -moz-transform: scale(@ratio);
+      -ms-transform: scale(@ratio);
+       -o-transform: scale(@ratio);
+          transform: scale(@ratio);
+}
+.translate(@x, @y) {
+  -webkit-transform: translate(@x, @y);
+     -moz-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y);
+       -o-transform: translate(@x, @y);
+          transform: translate(@x, @y);
+}
+.skew(@x, @y) {
+  -webkit-transform: skew(@x, @y);
+     -moz-transform: skew(@x, @y);
+      -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twitter/bootstrap/issues/4885
+       -o-transform: skew(@x, @y);
+          transform: skew(@x, @y);
+  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
+}
+.translate3d(@x, @y, @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+     -moz-transform: translate3d(@x, @y, @z);
+       -o-transform: translate3d(@x, @y, @z);
+          transform: translate3d(@x, @y, @z);
+}
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden
+// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
+.backface-visibility(@visibility){
+	-webkit-backface-visibility: @visibility;
+	   -moz-backface-visibility: @visibility;
+	        backface-visibility: @visibility;
+}
+
+// Background clipping
+.background-clip(@clip) {
+  -webkit-background-clip: @clip;
+     -moz-background-clip: @clip;
+          background-clip: @clip;
+}
+
+// Background sizing
+.background-size(@size) {
+  -webkit-background-size: @size;
+     -moz-background-size: @size;
+       -o-background-size: @size;
+          background-size: @size;
+}
+
+// Box sizing
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+// User select
+// For selecting text on the page
+.user-select(@select) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}
+
+// Resize anything
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+// CSS3 Content Columns
+.content-columns(@column-count, @column-gap: @grid-gutter-width) {
+  -webkit-column-count: @column-count;
+     -moz-column-count: @column-count;
+          column-count: @column-count;
+  -webkit-column-gap: @column-gap;
+     -moz-column-gap: @column-gap;
+          column-gap: @column-gap;
+}
+
+// Optional hyphenation
+.hyphens(@mode: auto) {
+  word-wrap: break-word;
+  -webkit-hyphens: @mode;
+     -moz-hyphens: @mode;
+      -ms-hyphens: @mode;
+       -o-hyphens: @mode;
+          hyphens: @mode;
+}
+
+// Opacity
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+}
+
+
+
+// BACKGROUNDS
+// --------------------------------------------------
+
+// Gradients
+#gradient {
+  .directional(@startColor: #555, @endColor: #333, @deg: 90deg) {
+    background-color: @endColor;
+    background-image: -moz-linear-gradient(@deg, @startColor, @endColor); // FF 3.6+
+    background-image: -webkit-linear-gradient(@deg, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(@deg, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(@deg, @startColor, @endColor); // Standard, IE10
+    background-repeat: repeat-x;
+  }
+  .horizontal-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+    background-color: mix(@midColor, @endColor, 80%);
+    background-image: -webkit-linear-gradient(left, @startColor, @midColor @colorStop, @endColor);
+    background-image: -moz-linear-gradient(left, @startColor, @midColor @colorStop, @endColor);
+    background-image: -o-linear-gradient(left, @startColor, @midColor @colorStop, @endColor);
+    background-image: linear-gradient(to right, @startColor, @midColor @colorStop, @endColor);
+    background-repeat: no-repeat;
+  }
+
+  .vertical-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+    background-color: mix(@midColor, @endColor, 80%);
+    background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: -moz-linear-gradient(top, @startColor, @midColor @colorStop, @endColor);
+    background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
+    background-repeat: no-repeat;
+  }
+  .radial(@innerColor: #555, @outerColor: #333) {
+    background-color: @outerColor;
+    background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@innerColor), to(@outerColor));
+    background-image: -webkit-radial-gradient(circle, @innerColor, @outerColor);
+    background-image: -moz-radial-gradient(circle, @innerColor, @outerColor);
+    background-image: -o-radial-gradient(circle, @innerColor, @outerColor);
+    background-repeat: no-repeat;
+  }
+  .striped(@color: #555, @angle: 45deg) {
+    background-color: @color;
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  }
+}
+
+
+// COMPONENT MIXINS
+// --------------------------------------------------
+.border(@color: transparent,@style: solid,@width: 0.75pt){
+  border-width: @width;
+  border-style: @style;
+  border-color: @color;
+  border-radius: @border-radius-base;
+}
+// Horizontal dividers
+// -------------------------
+// 底边线分隔
+.divider(@border-color: #E5E5E5) {
+  cursor: default;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-width: 0 0 0.75pt 0;
+  border-style: solid;
+  border-color: @border-color;
+  //vertical-align: middle;
+}
+// 空元素边线水平分割
+.divider-empty(@border-color: #E5E5E5,@background-color: transparent) {
+  cursor: default;
+  height: 0.75pt;
+  margin: 0.5em 0 0;
+  padding-top: 0;
+  overflow: hidden;
+  background-color: @background-color;
+  border-width: 0.75pt 0 0 0;
+  border-style: solid;
+  border-color: @border-color;
+}
+// 占位文字分隔
+.holder(@color: #E5E5E5){
+  cursor: default !important;
+  color: @color !important;
+}
+// hover pop base
+.hover-pop(){
+  display: none;
+  //position: absolute;
+  background-color: @dropdown-background;
+  min-width: 5em;
+  .border(@dropdown-border);
+  border-radius: @border-radius-base;
+  .box-shadow(0 4.5pt 9pt rgba(0,0,0,.175));
+  //.background-clip(padding-box);
+  z-index: @zindex-dropdown;
+}
+// Button psuedo states
+// -------------------------
+// 默认 单边框透明
+.btn-pseudo-states( @background-color,  @border-color) {
+  background-color: @background-color;
+  border: 0.75pt solid transparent;
+  &.active,
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(@background-color, 5%);
+        //border-color: darken(@border-color, 10%);
+  }
+}
+
+.btn-pseudo-states( @background-color,  @border-color,border) {
+  background-color: @background-color;
+  border: 0.75pt solid @border-color;
+  &.active,
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(@background-color, 5%);
+        border-color: darken(@border-color, 10%);
+  }
+}
+// Navbar vertical align
+// -------------------------
+// Vertically center elements in the navbar.
+// Example: an element has a height of 22.5pt, so write out `.navbarVerticalAlign(22.5pt);` to calculate the appropriate top margin.
+.navbar-vertical-align(@element-height) {
+  margin-top: (@navbar-height - @element-height) / 2;
+  margin-bottom: (@navbar-height - @element-height) / 2;
+}
+
+
+
+// Grid System
+// -----------
+
+// Centered container element
+.container-fixed() {
+  margin-right: auto;
+  margin-left: auto;
+  .clear_float();
+}
+
+// Make a Grid
+// Use .makeRow and .makeColumn to assign semantic layouts grid system behavior
+// .makeRow() {
+//   margin-left: @grid-gutter-width * -1;
+//   .clearfix();
+// }
+// .makeColumn(@columns: 1, @offset: 0) {
+//   float: left;
+//   margin-left: (@grid-column-width * @offset) + (@grid-gutter-width * (@offset - 1)) + (@grid-gutter-width * 2);
+//   width: (@grid-column-width * @columns) + (@grid-gutter-width * (@columns - 1));
+// }
+
+.make-row() {
+
+}
+.make-column(@columns) {
+  float: left;
+  padding: @grid-gutter-width;
+  width: percentage(@columns / @grid-columns);
+}
+.make-column-offset(@columns) {
+  margin-left: percentage(@columns / @grid-columns);
+}
+
+
+// The Grid
+#gridold {
+  .core(@grid-column-width, @grid-gutter-width) {
+    .spanX(@index) when (@index > 0) {
+      (~".span@{index}") { .span(@index); }
+      .spanX(@index - 1);
+    }
+    .spanX(0) {}
+
+    .offsetX(@index) when (@index > 0) {
+      (~".offset@{index}") { .offset(@index); }
+      .offsetX(@index - 1);
+    }
+    .offsetX(0) {}
+
+    // Base styles
+    .offset(@columns) {
+      margin-left: percentage(@columns / @grid-columns);
+    }
+    .span(@columns) {
+      width: percentage(@columns / @grid-columns);
+    }
+
+    // Generate .spanX and .offsetX
+    .spanX(@grid-columns);
+    .offsetX(@grid-columns);
+  }
+}
+
+#span( ){
+  .spanX(@index) when (@index > 0) {
+    (~".span@{index}") { .span(@index); }
+    .spanX(@index - 1);
+  }
+  .spanX(0) {}
+  .span(@columns) {
+    width: @grid-column-width * @columns;
+  }
+  // Generate .spanX and .offsetX
+  .spanX(@grid-max-columns);
+}

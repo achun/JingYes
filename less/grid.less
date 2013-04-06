@@ -1,0 +1,36 @@
+//
+// Grid system
+// --------------------------------------------------
+[class^="span"] {
+  min-height: 7.5pt;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+// Responsive: Tablets and up
+@media screen and (min-width: 576pt) {
+  .container {
+    max-width: 546pt;
+  }
+  // Generate the grid columns and offsets
+  [class^="span"] {
+    display: inline-block;
+  }
+  #span();/// #grid > .core(@grid-column-width, @grid-gutter-width);
+}
+
+// Responsive: Desktops and up
+@media screen and (min-width: 744pt) {
+  .container {
+    max-width: 705pt;
+  }
+}
+
+// Responsive: Large desktops and up
+@media screen and (min-width: 900pt) {
+  .container {
+    max-width: 877.5pt;
+  }
+}

@@ -1,0 +1,135 @@
+//
+// Typography
+// --------------------------------------------------
+p {
+  margin: 0 0 0.5em;
+}
+
+// Emphasis & misc
+// -------------------------
+
+small   { font-size: 86.8453%; }
+
+strong  { font-weight: bold; }
+em      { font-style: italic; }
+cite    { font-style: normal; }
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @headings-font-family;
+  font-weight: @headings-font-weight;
+  line-height: 1;
+  text-rendering: optimizelegibility;
+  small {
+    font-weight: normal;
+    color: @grayLight;
+  }
+}
+
+
+h1 { margin: 30 - @font-size-base *  4  /2.8 0 22.5 - @font-size-base *  4/2.8; font-size: @font-size-base * 4/1.4;   font-size: 4rem;   } // 40px
+h2 { margin: 30 - @font-size-base *  3  /2.8 0 22.5 - @font-size-base *  3/2.8; font-size: @font-size-base * 3/1.4;   font-size: 3rem;   } // 30px
+h3 { margin: 24 - @font-size-base *  2.4/2.8 0 24   - @font-size-base *2.4/2.8; font-size: @font-size-base * 2.4/1.4; font-size: 2.4rem; } // 24px
+h4 { margin: 15 - @font-size-base *  2  /2.8 0 15   - @font-size-base *  2/2.8; font-size: @font-size-base * 2/1.4;   font-size: 2rem;   } // 20px
+h5 { margin: 15 - @font-size-base *  1  /2   0 15   - @font-size-base *  1/2  ; font-size: @font-size-base;           font-size: 1.4rem; } // 14px
+h6 { margin: 15 - @font-size-base *  1.2/2.8 0 15   - @font-size-base *1.2/2.8; font-size: @font-size-base * 0.872;    font-size: 1.2rem; }// 12px
+
+h1 small { font-size: @font-size-base * 1.75; } // ~24px
+h2 small { font-size: @font-size-base * 1.25; } // ~18px
+h3,h4,h6,h6{
+  small { font-size: @font-size-base; font-size: 1rem; }
+}
+
+
+// Lists
+// --------------------------------------------------
+
+// Unordered and Ordered lists
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 0.5em 1em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  text-indent: 0;
+}
+
+// Description Lists
+dl {
+  margin:1em 0;
+}
+
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0;
+}
+
+// MISC
+// ----
+
+// Horizontal rules
+hr {
+  margin: @line-height-base 0;
+  border: 0;
+  border-top: 0.75pt solid @hr-border;
+  border-bottom: 0.75pt solid #fff;
+}
+
+// Abbreviations and acronyms
+abbr[title],
+// Added data-* attribute to help out our tooltip plugin, per https://github.com/twitter/bootstrap/issues/5257
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 0.75pt dotted @grayLight;
+}
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+// Blockquotes
+blockquote {
+  padding: 0 0 0 11.25pt;
+  margin: 0 0 1;
+  border-left: 3.75pt solid @grayLighter;
+  p {
+    margin-bottom: 0;
+    font-size: @font-size-base * 1.25;
+    font-weight: 300;
+    line-height: 1.25;
+  }
+  small {
+    display: block;
+    color: @grayLight;
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+
+// Quotes
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+// Addresses
+address {
+  display: block;
+  margin-bottom: 1em;
+  font-style: normal;
+  //line-height: @line-height-base;
+}

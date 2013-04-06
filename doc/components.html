@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  <title>组件 · JingYes CSS FrameWork</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../jingyes.css" rel="stylesheet">
+  <link href="doc.css" rel="stylesheet">
+</head>
+<body>
+  <div class="span16 mid">
+    <nav>
+      <dl class="bar radius0">
+        <dt class="active"><a href="./" class="brand">静夜思</a></dt>
+        <dt><a href="getting-started.html">起步</a></dt>
+        <dt><a href="scaffolding.html">基架</a></dt>
+        <dt><a href="base-css.html">基本CSS样式</a></dt>
+        <dt><a href="components.html">组件</a></dt>
+        <dt><a href="javascript.html">JavaScript插件</a></dt>
+        <dt><a href="about.html">关于</a></dt>
+      </dl>
+    </nav>
+    <pre id="overview" class="radius0">
+      <h1>组件</h1>
+      周知：这是一篇简约介绍文档，并未包含组合变化。更丰富的表现可以参见 demo 。请注意每个组件所使用的简约标记结构以及class名称。
+    </pre>
+    <nav class="span4" id="subnav">
+      <dl>
+        <dt><a href="#navdl">导航</a></dt>
+        <dt><a href="#buttons">按钮</a></dt>
+        <dt><a href="#breadcrumb">面包屑</a></dt>
+        <dt><a href="#pagination">分页条</a></dt>
+        <dt><a href="#blockboard">板框</a></dt>
+      </dl>
+    </nav>
+    <div class="span11">
+      <section id="navdl">
+        <h1>导航</h1>
+        <p>首先导航标签 nav 是语义上的。静夜思认为一个页面上可以有多个导航，重要的主导航或者重要子菜单(这个是中文语义的菜单，html 中的 menu 是有特指的)，所以静夜思选用 <code>nav&gt;dl</code> 结构。</p>
+        <h2>堆叠导航</h2>
+        <p>nav和dl默认都是块标签，因此简约标记下此种导航是堆叠的。本文档的分类子导航就是一个堆叠导航</p>
+        <pre>
+&lt;nav&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;&lt;a href="#navdl"&gt;导航&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#buttons"&gt;按钮&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#breadcrumb"&gt;面包屑&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#pagination"&gt;分页条&lt;/a&gt;&lt;/dt&gt;
+  &lt;/dl&gt;
+&lt;/nav&gt;
+        </pre>
+        <h2>bar导航</h2>
+        <p>条形导航只需要给 dl <code>class="bar"</code>属性即可。因<code>nav</code>是表现语义的，所以class赋予dl</p>
+        <div class="docs-example">
+          <nav>
+            <dl class="bar">
+              <dt><a href="#navdl">导航</a></dt>
+              <dt><a href="#buttons">按钮</a></dt>
+              <dt><a href="#breadcrumb">面包屑</a></dt>
+              <dt><a href="#pagination">分页条</a></dt>
+            </dl>
+          </nav>
+        </div>
+        <pre>
+&lt;nav&gt;
+  &lt;dl class="bar"&gt;
+    &lt;dt&gt;&lt;a href="#navdl"&gt;导航&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#buttons"&gt;按钮&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#breadcrumb"&gt;面包屑&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#pagination"&gt;分页条&lt;/a&gt;&lt;/dt&gt;
+  &lt;/dl&gt;
+&lt;/nav&gt;
+        </pre>
+        <p class="info">您可能注意到了，页面顶部就是用的这两种导航，且默认配色方案也不同。dl 是可以嵌套的。</p>
+        <p class="info">事实上静夜思中很多地方都用到了 <code>nav dl</code> 标记结构，相信有些情况下您会认为采用 <code>nav</code> 标签有所不妥，那您也可以使用其它标签附加 <code>class="nav"</code> 组成类似 <code>div.nav dl</code> 的标记完成同样功能。</p>
+      </sction>
+      <section id="buttons">
+        <h1>按钮</h1>
+        <p>按钮是具有交互行为(通常是点击Click)的组件，可以简单的使用 <code>button</code> (通常用于表单 from 中)标签或者<code>class="btn"</code>(让其他标签看起来像button)。</p>
+        <h2>简约按钮</h2>
+        <p class="info">注意：因使用 clearTextNode ，按钮间的空白没有了，想留下空白参见 clearTextNode 的用法。</p>
+        <div class="docs-example">
+          <button>接受</button>   <button>拒绝</button> <b class="btn">B标签</b>
+        </div>
+        <pre>&lt;button&gt;接受&lt;/button&gt;   &lt;button&gt;拒绝&lt;/button&gt; &lt;b class="btn"&gt;B标签&lt;/b&gt;</pre>
+        <h2>语义提示按钮</h2>
+        <p>添加响应的class</p>
+        <div class="docs-example">
+           <button class="primary">primary</button>   <button class="warning">warning</button> <b class="btn success">success</b> <b class="btn info">info</b><button class="danger">danger</button> <button class="disabled">disabled</button> 
+        </div>
+      </sction>
+      <section id="breadcrumb">
+        <h1>面包屑</h1>
+        <p>由 <code>.breadcrumb b a</code>标记结构组成</p>
+        <div class="docs-example">
+          <div class="breadcrumb"><b><a href="#">首页</a></b><b><a href="#">上级</a></b><b>当前</b></div>
+        </div>
+        <pre>
+&lt;div class="breadcrumb"&gt;
+  &lt;b&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/b&gt;
+  &lt;b&gt;&lt;a href="#"&gt;上级&lt;/a&gt;&lt;/b&gt;
+  &lt;b&gt;当前&lt;/b&gt;
+&lt;/div&gt;
+        </pre>
+      </sction>
+      <section id="pagination">
+        <h1>分页条</h1>
+        <p>由 <code>.pagination b|a</code>标记结构组成</p>
+        <div class="docs-example">
+          <div class="pagination"><b>上页</b><b>1</b><a href="#">2</a><a href="#">3</a><a href="#">下页</a></div>
+        </div>
+        <pre>
+&lt;div class="pagination"&gt;
+  &lt;b&gt;上页&lt;/b&gt;
+  &lt;b&gt;1&lt;/b&gt;
+  &lt;a href="#"&gt;2&lt;/a&gt;
+  &lt;a href="#"&gt;3&lt;/a&gt;
+  &lt;a href="#"&gt;下页&lt;/a&gt;
+&lt;/div&gt;
+        </pre>
+      </sction>
+      <section id="blockboard">
+        <h1>板框</h1>
+        <p>由 <code>.blockboard {p,div,p}</code> 标记结构组成</p>
+        <div class="docs-example">
+          <div class="blockboard">
+            <p>p:nth-of-type(1)是标题,,可以省略</p>
+            <div>
+              div:nth-of-type(1)主体
+            </div>
+            <p>p:nth-last-of-type(1)是注脚,可以省略</p>
+          </div>
+        </div>
+        <pre>
+&lt;div class="blockboard"&gt;
+  &lt;p&gt;p:nth-of-type(1)是标题,,可以省略&lt;/p&gt;
+  &lt;div&gt;
+    div:nth-of-type(1)主体
+  &lt;/div&gt;
+  &lt;p&gt;p:nth-last-of-type(1)是注脚,可以省略&lt;/p&gt;
+&lt;/div&gt;
+        </pre>
+      </sction>
+    </div>
+  </div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="../js/jingyes.js"></script>
+<script src="doc.js"></script>
+</html>
