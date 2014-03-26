@@ -1,0 +1,85 @@
+.fatal{
+	color:@color-fatal;
+}
+.panic{
+	color:@color-panic;
+}
+.alert{
+	color:@color-alert;
+}
+.error{
+	color:@color-error;
+}
+.report{
+	color:@color-report;
+}
+.notify{
+	color:@color-notify;
+}
+.info{
+	color:@color-info;
+}
+.debug{
+	color:@color-debug;
+}
+
+// disabled
+html body .disabled,
+html body [disabled] {
+  color: @color-disabled;
+}
+
+.primary{
+  &,+ i,
+  +.split+i,
+  &.addon + button,
+  &.addon + .button,
+  {
+    .btn-pseudo-states(@button-bgcolor-primary, @button-border-primary);
+  }
+}
+input[type="submit"],
+button[type="submit"],
+{
+  .btn-pseudo-states(@button-bgcolor-primary, @button-border-primary);
+}
+// Warning appears as orange
+.warning{
+  &,+ i,
+  +.split+i,
+  &.addon + button,
+  &.addon + .button,
+  {
+    .btn-pseudo-states(@button-bgcolor-warning, @button-border-warning);
+  }
+}
+// error appear as red
+.error{
+  &,+ i,
+  +.split+i,
+  &.addon + button,
+  &.addon + .button,
+  {
+    .btn-pseudo-states(@button-bgcolor-error, @button-border-error);
+  }
+}
+// Success appears as green
+.success{
+  &,+ i,
+  +.split+i,
+  &.addon + button,
+  &.addon + .button,
+  {
+    .btn-pseudo-states(@button-bgcolor-success, @button-border-success);
+  }
+}
+// Info appears as blue-green
+.info{
+  &,+ i,
+  +.split+i,
+  &.addon + button,
+  &.addon + .button,
+  {
+    .btn-pseudo-states(@button-bgcolor-info, @button-border-info);
+  }
+}

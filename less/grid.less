@@ -1,6 +1,12 @@
 //
 // Grid system
 // --------------------------------------------------
+// http://css-tricks.com/the-lengths-of-css/
+// 1em == 16px == 0.17in == 12pt == 1pc == 4.2mm == 0.42cm
+// 1mm == 0.1cm == 3.78px
+// https://github.com/h5bp/mobile-boilerplate/wiki/Mobile-Matrices
+// http://i-skool.co.uk/mobile-development/web-design-for-mobiles-and-tablets-viewport-sizes/
+// http://viewportsizes.com/
 [class^="span"] {
   min-height: 7.5pt;
   vertical-align: top;
@@ -10,27 +16,27 @@
 }
 
 // Responsive: Tablets and up
-@media screen and (min-width: 576pt) {
-  .container {
-    max-width: 546pt;
+@media screen and (min-width: 450pt) {
+  .responsive .container {
+    max-width: 450pt;
   }
   // Generate the grid columns and offsets
   [class^="span"] {
     display: inline-block;
   }
-  #span();/// #grid > .core(@grid-column-width, @grid-gutter-width);
+  #grid();
 }
 
 // Responsive: Desktops and up
-@media screen and (min-width: 744pt) {
-  .container {
-    max-width: 705pt;
+@media screen and (min-width: 600pt) {
+  .responsive .container {
+    max-width: 600pt;
   }
 }
 
 // Responsive: Large desktops and up
-@media screen and (min-width: 900pt) {
-  .container {
-    max-width: 877.5pt;
+@media screen and (min-width: 768pt) {
+  .responsive .container {
+    max-width: 100%;
   }
 }

@@ -4,9 +4,9 @@
   position: relative;
   font-weight: normal;
 }
-.breadcrumb > b:nth-child(n+2):before
+.breadcrumb > b:nth-child(n+2)::before
 {
   content: "/";
   margin: 0 0.25em;
-  color: @divider-color;
+  color: @breadcrumb-divider;
 }

@@ -1,11 +1,15 @@
-//
 // Tables
 
 table {
   max-width: 100%;
   background-color: @table-background;
-  border-collapse: collapse;
-  border-spacing: 0;
+}
+
+td,th {
+  padding: 6pt;
+  border-width: @table-border-width;
+  border-style: @table-border-style;
+  border-color: @table-border-color;
 }
 
 table.condensed {
@@ -18,8 +22,7 @@ table.condensed {
 
 .tables table {
   width: 100%;
-  border-radius:@border-radius-base;
-  border: @table-border;
+  border-radius:@radius-base;
   margin-bottom: @line-height-base;
   th,
   td {
@@ -27,8 +30,7 @@ table.condensed {
     line-height: @line-height-base;
     text-align: left;
     vertical-align: top;
-    border-top: @table-border;
-    border-left: @table-border;
+
   }
   th {
     font-weight: bold;
@@ -44,36 +46,25 @@ table.condensed {
   {
     border-left: 0;
   }
-  // Account for multiple tbody instances
-  tbody + tbody {
-    border-top: @table-border;
-  }
 
   // Nesting
   table {
-    background-color: @body-background;
+    background-color: @body-background-color;
   }
-  // TABLE BACKGROUNDS
-  // -----------------
-  // Exact selectors below required to override .tables-striped
 
   tbody tr {
     &.success > td {
-      background-color: @state-success-background;
+      background-color: @color-success;
     }
     &.error > td {
-      background-color: @state-error-background;
+      background-color: @color-error;
     }
     &.warning > td {
-      background-color: @state-warning-background;
+      background-color: @color-warning;
     }
   }
 }
 
-// ZEBRA-STRIPING
-// --------------
-
-// Default zebra-stripe styles (alternating gray and transparent backgrounds)
 .tables table:not(.striped-none) {
   > tbody {
     > tr:nth-child(even) > td,
@@ -86,11 +77,6 @@ table.condensed {
   }
 }
 
-
-
-// HOVER EFFECT
-// ------------
-// Placed here since it has to come after the potential zebra striping
 .tables table:not(.hover-none) {
   tbody {
     tr:hover > td,
@@ -101,13 +87,13 @@ table.condensed {
   // Hover states for .tables-hover
   tbody tr {
     &.success:hover > td {
-      background-color: darken(@state-success-background, 5%);
+      background-color: darken(@color-success, 5%);
     }
     &.error:hover > td {
-      background-color: darken(@state-error-background, 5%);
+      background-color: darken(@color-error, 5%);
     }
     &.warning:hover > td {
-      background-color: darken(@state-warning-background, 5%);
+      background-color: darken(@color-warning, 5%);
     }
   }
 }

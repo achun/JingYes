@@ -1,10 +1,4 @@
-//
 // Forms
-// --------------------------------------------------
-
-
-// Non-controls
-// -------------------------
 
 form {
   margin: 0;
@@ -24,7 +18,7 @@ legend {
   margin-bottom: 1em;
   font-size: @font-size-base * 1.5;
   line-height: @line-height-base * 2;
-  color: @grayDark;
+  color: @legend-color;
   border: 0;
   border-bottom: 0.75pt solid #e5e5e5;
 }
@@ -35,26 +29,25 @@ label {
   font-weight: bold;
 }
 
-select,input:not([type="file"]),input.text
+select,input:not([type="file"])
 {
   height: 2em;
   margin: 0;
   padding: 0;
   display: inline-block;
   vertical-align: middle;
-  border: 0.75pt solid @input-border;
-  border-radius: @input-border-radius;
+  border: @input-border;
+  border-radius: @input-radius;
   .box-sizing(content-box);
 }
 
-//input[type="hidden"],
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
 {
-  color: @gray;
+  color: @input-button-color;
   padding:0 0.5em;
-  background-color: @input-background;
+  background-color: @input-bgcolor;
 }
 
 input[type="image"]{
@@ -77,10 +70,10 @@ input[type="file"]{
   border-radius:0;
   vertical-align: middle;
 }
-input[type="color"]:not(.text),
+input[type="color"]
 {
  margin: 0;
- border-width: 1px;
+ border-width: 0.75pt;
  vertical-align: middle; 
 }
 
@@ -95,7 +88,6 @@ input[type="checkbox"]
   border-radius: 0;
 }
 
-input.text,
 input[type="text"],
 input[type="datetime"],
 input[type="email"],
@@ -143,13 +135,13 @@ input[type="tel"],
 {
   // Focus state
   &:focus {
-    border-color: rgba(82,168,236,.8);
     outline: 0;
-    .box-shadow(0 0 6pt rgba(82,168,236,.6));
+    border: @input-border-focus;
+    box-shadow: @input-shadow-focus;
   }
 }
 textarea:focus{
-  .box-shadow(0 0 6pt rgba(82,168,236,.6));
+  box-shadow: @textarea-shadow-focus;
 }
 // Make multiple select elements height not fixed
 select[multiple],
@@ -160,13 +152,15 @@ select[size] {
 // -------------------------
 input,
 textarea {
-  .placeholder();
+  &::-webkit-input-placeholder,    
+  &:-moz-placeholder ,
+  &::-moz-placeholder ,
+  &:-ms-input-placeholder {
+    color: @input-color-placeholder;
+  }
 }
 
-// Disabled and read-only inputs
-// Note: HTML5 says that inputs under a fieldset > legend:first-child won't be
-//   disabled if the fieldset is disabled. Due to implementation difficulty,
-//   we don't honor that edge case; we style them as disabled anyway.
+// Disabled and readonly
 input,
 select,
 textarea {
@@ -174,10 +168,10 @@ textarea {
   &[readonly],
   fieldset[disabled] & {
     cursor: not-allowed;
-    background-color: @input-background-disabled;
+    background-color: @input-bgcolor-disabled;
   }
 }
-// Explicitly reset the colors here
+
 input[type="radio"],
 input[type="checkbox"] {
   &[disabled],
@@ -188,58 +182,19 @@ input[type="checkbox"] {
 }
 
 
-// HTML5 invalid states
-// Shares styles with the .control-group.error above
+// invalid states
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
-  color: #b94a48;
-  border-color: #ee5f5b;
-  &:focus {
-    border-color: darken(#ee5f5b, 10%);
-    @shadow: 0 0 4.5pt lighten(#ee5f5b, 20%);
-    .box-shadow(@shadow);
-  }
+  color: @input-color-focus-invalid;
+  border-color: @input-border-color-focus-invalid;
+  box-shadow: none;
 }
 
 // Horizontal forms
-// --------------------------------------------------
 @media screen and (min-width: 576pt) {
 
   .form-horizontal {
 
-    // Increase spacing between groups
-    .control-group {
-      position: relative;
-      margin-bottom: @line-height-base;
-      .clear_float();
-
-      input,
-      select,
-      textarea,
-      .uneditable-input {
-        margin-bottom: 0;
-      }
-    }
-
-    // Float the labels left
-    .control-group > .control-label {
-      float: left;
-      width: @component-offset-horizontal - 15;
-      padding-top: 4.5pt;
-      text-align: right;
-    }
-
-    // Move over all input controls and content over
-    .control-group > .controls {
-      margin-left: @component-offset-horizontal;
-    }
-
   }
 }
-.label-50 label{width:50%;text-align: right;}
-.label-5 label{width:5em;text-align: right;}
-.label-10 label{width:10em;text-align: right;}
-.label-15 label{width:15em;text-align: right;}
-.label-20 label{width:20em;text-align: right;}
-.label-30 label{width:30em;text-align: right;}

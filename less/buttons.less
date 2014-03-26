@@ -1,56 +1,52 @@
 /* buttons */
 //markup
-.btn,button {
-  color: @btn-color;
+/*
+<button><i></i>button</button>
+*/
+.button,button {
   height: 2em;
   line-height: 2;
   margin: 0;
-  cursor: pointer;
-  border: 0.75pt solid @btn-border;
-  display: inline-block;
-  outline: 0;
   padding: 0 1em;
+  color: @button-color;
+  border: @button-border;
+  border-radius: @button-radius;
+  background-color: @button-bgcolor;
+  display: inline-block;
+  cursor: pointer;
+  outline: 0;
   text-align: center;
   font-weight: 500;
-  border-radius: @border-radius-base;
-  background-color: @btn-background;
   vertical-align: middle;
   .box-sizing(content-box);
-  &,&.split > em:empty{
+  &,&.split + i:empty{
     &:hover,
     &:focus,
     &:active {
-      background-color: darken(@btn-background, 5%);
-          border-color: darken(@btn-border, 10%);
+      background-color: darken(@button-bgcolor, 5%);
+          border-color: darken(@button-border-color, 10%);
     }
   }
-  > em:empty {
-    margin-left: 0.5em;
-  }
-  &.split{
-    +em{
-      margin-left: 0.75pt;
-    }
+  &.split + i:empty {
+    margin-left: 0.75pt;
+    cursor: pointer;
   }
 }
 
-button[disabled],
-button[disabled] + em,
-.disabled,
-.disabled + em,
-fieldset[disabled] button,
-fieldset[disabled] button + em,
-fieldset[disabled] .btn,
-fieldset[disabled] .btn + em  
-{
-  &:not(.free){
-    cursor: not-allowed;
-    background:lighten(gray, 15%);
-    border-color:gray;
-    color:lighten(gray, 35%);          
-    .box-shadow(none);
-  }
-}
-.btn > [class^="glyphicon-"]:before{
+.button > [class^="glyphicon-"]::before{
   margin-top: 0.5em;
+}
+
+.button.disabled,
+button[disabled],
+button.disabled,
+fieldset[disabled] .button,
+fieldset.disabled .button,
+fieldset[disabled] button,
+fieldset.disabled button,
+{
+  &,&.split + i:empty {
+    cursor: not-allowed;
+    box-shadow: none;
+  }
 }
