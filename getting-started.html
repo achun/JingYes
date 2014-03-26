@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  <title>起步 · JingYes CSS FrameWork</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="jingyes.css" rel="stylesheet">
+  <link href="doc.css" rel="stylesheet">
+</head>
+<body class="flat">
+  <div class="span16 mid">
+  <nav class="span16" id="mainNav">
+    <dl class="bar">
+      <dt class="active"><a href="./" class="brand">静夜思</a></dt>
+      <dt><a href="getting-started.html">起步</a></dt>
+      <dt><a href="grid.html">网格</a></dt>
+      <dt><a href="base.html">基本CSS样式</a></dt>
+      <dt><a href="components.html">组件</a></dt>
+      <dt><a href="javascript.html">JavaScript插件</a></dt>
+      <dt><a href="about.html">关于</a></dt>
+    </dl>
+  </nav>
+  </div>
+  <div class="span16 mid">
+  <pre id="overview"></pre>
+  <div class="span5">
+    <nav class="span5" id="subnav">
+      <dl>
+        <dt><a href="#file-structure">文件结构</a></dt>
+        <dt><a href="#html-template">HTML模版</a></dt>
+      </dl>
+    </nav>
+  </div><div class="span11">
+    <section id="file-structure">
+      <h1>文件结构</h1>
+      <p>文件结构好像这个样子</p>
+<pre class="pre">
+JingYes/
+├── less/
+│   └── jingyes.less
+├── doc/
+│   └── index.html
+├── demo/
+│   └── index.html
+├── jingyes.css
+├── jingyes.min.css
+├── jingyes.js
+├── jingyes.min.js
+└── img/
+    ├── glyphicons-halflings.png
+    └── glyphicons-halflings-white.png
+</pre>
+      <p>less是源代码目录，doc就是您看到的这个文档目录，demo是演示例子目录，生产环境这些目录不必部署。</p>
+    </section>
+    <section id="html-template">
+      <h1>基本的HTML模版</h1>
+      <p>一个典型的HTML文件</p>
+<pre>
+&lt;!doctype html&gt;
+&lt;html lang="zh_CN"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;JingYes CSS FrameWork&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link href="pathto/jingyes.css" rel="stylesheet"&gt;
+    &lt;link href="pathto/yourdoc.css" rel="stylesheet"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello Word!&lt;/h1&gt;
+  &lt;/body&gt;
+  &lt;script src="pathto/jquery.js"&gt;&lt;/script&gt;
+  &lt;script src="pathto/jingyes.js"&gt;&lt;/script&gt;
+&lt;/html&gt;
+</pre>
+    </section>
+  </div>
+  </div>
+</body>
+<script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
+<script src="jingyes.js"></script>
+<script src="doc.js"></script>
+</html>

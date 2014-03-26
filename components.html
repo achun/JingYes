@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  <title>组件·JingYes CSS FrameWork</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="jingyes.css" rel="stylesheet">
+  <link href="doc.css" rel="stylesheet">
+</head>
+<body class="flat" data-jy="{ss:1}">
+  <div class="span16 mid">
+    <nav class="span16" id="mainNav">
+      <dl class="bar">
+        <dt class="active"><a href="./" class="brand">静夜思</a></dt>
+        <dt><a href="getting-started.html">起步</a></dt>
+        <dt><a href="grid.html">网格</a></dt>
+        <dt><a href="base.html">基本CSS样式</a></dt>
+        <dt><a href="components.html">组件</a></dt>
+        <dt><a href="javascript.html">JavaScript插件</a></dt>
+        <dt><a href="about.html">关于</a></dt>
+        <dt><a class="toggle" data-jy="body.flat">toggle flat</a></dt>
+      </dl>
+    </nav>
+  </div>
+  <div class="span16 mid">
+    <pre id="overview">
+      <h1>组件</h1>
+      这是一篇简约介绍文档，并未包含组合变化。更丰富的表现可以参见 demo 。请注意每个组件所使用的简约标记结构以及class名称。
+      本页使用了 <code>body.flat</code> 取消了所有的圆角。可以使用 mainNav 上的按钮进行切换。
+    </pre>
+    <div class="span5">
+        <nav class="span5 affix-top" id="localNav" data-jy="#mainNav">
+          <dl>
+            <dt><a href="#nav">导航</a></dt>
+            <dt><a href="#tabs">Tabs</a></dt>
+            <dt><a href="#buttons">按钮</a></dt>
+            <dt><a href="#breadcrumb">面包屑</a></dt>
+            <dt><a href="#pagination">分页条</a></dt>
+            <dt><a href="#blockboard">Blockboard</a></dt>
+            <dt><a href="#form">表单</a></dt>
+          </dl>
+        </nav>
+    </div><div class="span11">
+      <section id="nav">
+        <h1>导航</h1>
+        <h2>堆叠导航</h2>
+        <div class="docs-example">
+          <nav>
+            <dl>
+              <dt><a href="#nav">导航</a></dt>
+              <dt><a href="#buttons">按钮</a></dt>
+              <dt><a href="#breadcrumb">面包屑</a></dt>
+              <dt><a href="#pagination">分页条</a></dt>
+            </dl>
+          </nav>
+        </div>
+        <pre>
+&lt;nav&gt;
+  &lt;dl&gt;
+    &lt;dt&gt;&lt;a href="#nav"&gt;导航&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#buttons"&gt;按钮&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#breadcrumb"&gt;面包屑&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#pagination"&gt;分页条&lt;/a&gt;&lt;/dt&gt;
+  &lt;/dl&gt;
+&lt;/nav&gt;
+        </pre>
+        <h2>bar 导航</h2>
+        <div class="docs-example">
+          <nav>
+            <dl class="bar">
+              <dt><a href="#nav">导航</a></dt>
+              <dt class="active"><a href="#buttons">按钮</a></dt>
+              <dt><a href="#breadcrumb">面包屑</a></dt>
+              <dt><a href="#pagination">分页条</a></dt>
+              <dt><a href="#form">表单</a></dt>
+            </dl>
+          </nav>
+        </div>
+        <pre>
+&lt;nav&gt;
+  &lt;dl class="bar"&gt;
+    &lt;dt&gt;&lt;a href="#nav"&gt;导航&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt class="active"&gt;&lt;a href="#buttons"&gt;按钮&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#breadcrumb"&gt;面包屑&lt;/a&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;a href="#pagination"&gt;分页条&lt;/a&gt;&lt;/dt&gt;
+  &lt;/dl&gt;
+&lt;/nav&gt;
+        </pre>
+      </section>
+      <section id="tabs">
+        <h2>Tabs</h2>
+        <p class="notify">基本样式, 配套代码由应用实现</p>
+        <div class="docs-example">
+          <nav class="shadow">
+            <header>
+              <span class="active"><a href="#tab1">Body1</a></span>
+              <span><a href="#tab2">Body2</a></span>
+              <span><a href="#tab3">Body3</a></span>
+              <span><a href="#tab4">Body4</a></span>
+            </header>
+            <div>
+              <div id="tab1" class="active">tabs body 1</div>
+              <div id="tab2">tabs body 2</div>
+              <div id="tab3">tabs body 3</div>
+              <div id="tab4">tabs body 4</div>
+            </div>
+          </nav>
+        </div>
+        <pre>
+&lt;nav class="shadow"&gt;
+  &lt;span class="active"&gt;&lt;a href="#nav"&gt;导航&lt;/a&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;a href="#buttons"&gt;按钮&lt;/a&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;a href="#breadcrumb"&gt;面包屑&lt;/a&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;a href="#pagination"&gt;分页条&lt;/a&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;a href="#form"&gt;表单&lt;/a&gt;&lt;/span&gt;
+  &lt;div&gt;
+    &lt;div&gt;tabs body 1&lt;/div&gt;
+    &lt;div&gt;tabs body 2&lt;/div&gt;
+    &lt;div&gt;tabs body 3&lt;/div&gt;
+    &lt;div&gt;tabs body 4&lt;/div&gt;
+    &lt;div&gt;tabs body 5&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+        </pre>
+      </section>
+      <section id="buttons">
+        <h1>按钮</h1>
+        <h2>简单</h2>
+        <div class="docs-example">
+          <button>接受</button> <button>拒绝</button> <b class ="button">B标签</b><br><br>
+          <button class="primary">primary</button>
+          <button class="warning">warning</button>
+          <b class ="button success">success</b>
+          <b class ="button info">info</b>
+          <button class="error">error</button>
+          <button class="disabled">disabled</button> 
+        </div>
+        <pre>
+&lt;button&gt;接受&lt;/button&gt; &lt;button&gt;拒绝&lt;/button&gt; &lt;b class ="button"&gt;B标签&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+&lt;button class="primary"&gt;primary&lt;/button&gt;
+&lt;button class="warning"&gt;warning&lt;/button&gt;
+&lt;b class ="button success"&gt;success&lt;/b&gt;
+&lt;b class ="button info"&gt;info&lt;/b&gt;
+&lt;button class="error"&gt;error&lt;/button&gt;
+&lt;button class="disabled"&gt;disabled&lt;/button>&gt;
+        </pre>
+        <h2>Split button</h2>
+        <div class="docs-example">
+          <button class="split">button.split</button><i></i>
+          <button class="split primary">button.split</button><i></i>
+        </div>
+        <pre>&lt;button class="split"&gt;button.split&lt;/button&gt;&lt;i&gt;&lt;/i&gt;</pre>
+      </section>
+      <section id="breadcrumb">
+        <h1>面包屑</h1>
+        <div class="docs-example">
+          <div class="breadcrumb"><b><a href="#">首页</a></b><b><a href="#">上级</a></b><b>当前</b></div>
+        </div>
+        <pre>
+&lt;div class="breadcrumb"&gt;
+  &lt;b&gt;&lt;a href="#"&gt;首页&lt;/a&gt;&lt;/b&gt;
+  &lt;b&gt;&lt;a href="#"&gt;上级&lt;/a&gt;&lt;/b&gt;
+  &lt;b&gt;当前&lt;/b&gt;
+&lt;/div&gt;
+        </pre>
+      </section>
+      <section id="pagination">
+        <h1>分页条</h1>
+        <div class="docs-example">
+          <div class="pagination"><b>上页</b><b>1</b><a href="#">2</a><a href="#">3</a><a href="#">下页</a></div>
+        </div>
+        <pre>
+&lt;div class="pagination"&gt;
+  &lt;b&gt;上页&lt;/b&gt;
+  &lt;b&gt;1&lt;/b&gt;
+  &lt;a href="#"&gt;2&lt;/a&gt;
+  &lt;a href="#"&gt;3&lt;/a&gt;
+  &lt;a href="#"&gt;下页&lt;/a&gt;
+&lt;/div&gt;
+        </pre>
+      </section>
+      <section id="blockboard">
+        <h1>Blockboard</h1>
+        <div class="docs-example">
+          <div class="blockboard">
+            <header>header 是标题,可以省略</header>
+            <div>主体</div>
+            <p>主体</p>
+            <footer>footer 是注脚,可以省略</footer>
+          </div>
+        </div>
+        <pre>
+&lt;div class="blockboard"&gt;
+  &lt;header&gt; 是标题,可以省略&lt;/header&gt;
+  &lt;div&gt;主体&lt;/div&gt;
+  &lt;p&gt;主体&lt;/p&gt;
+  &lt;footer&gt; 是注脚,可以省略&lt;/footer&gt;
+&lt;/div&gt;
+        </pre>
+      </section>
+      <section id="form">
+      <h1>表单</h1>
+      <p>注意不能有多余的空白</p>
+      <div class="docs-example">
+      <form action="">
+        <input type="text" placeholder="placeholder"><br>
+        <label>
+          <span class="addon">label span.addon</span><input type="text" placeholder="placeholder">
+        </label>
+        <label class="addon">datetime</label><input type="datetime"><br>
+        <label class="addon">email</label><input type="email"><br>
+        <label class="addon">url</label><input type="url"><br>
+        <label class="addon">password</label><input type="password"><br>
+        <label class="addon">tel</label><input type="tel"><br>
+        <label>range <input type="range"></label><br>
+        <label class="addon">number</label><input type="number"><br>
+        <label class="addon">datetime-local</label><input type="datetime-local"><br>
+        <label class="addon">date</label><input type="date"><br>
+        <label class="addon">month</label><input type="month"><br>
+        <label class="addon">time</label><input type="time"><br>
+        <label class="addon">search</label><input type="search"><br>
+        <button type="submit">Submit</button> <input type="submit">
+      </form>
+      </div>
+      <pre>
+&lt;form action=""&gt;
+  &lt;input type="text" placeholder="placeholder"&gt;&lt;br&gt;
+  &lt;label&gt;
+    &lt;span class="addon"&gt;label span.addon&lt;/span&gt;&lt;input type="text" placeholder="placeholder"&gt;
+  &lt;/label&gt;
+  &lt;label class="addon"&gt;label.addon&lt;/label&gt;&lt;input type="text"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;datetime&lt;/label&gt;&lt;input type="datetime"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;email&lt;/label&gt;&lt;input type="email"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;url&lt;/label&gt;&lt;input type="url"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;password&lt;/label&gt;&lt;input type="password"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;tel&lt;/label&gt;&lt;input type="tel"&gt;&lt;br&gt;
+  &lt;label&gt;range &lt;input type="range"&gt;&lt;/label&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;number&lt;/label&gt;&lt;input type="number"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;datetime-local&lt;/label&gt;&lt;input type="datetime-local"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;date&lt;/label&gt;&lt;input type="date"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;month&lt;/label&gt;&lt;input type="month"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;time&lt;/label&gt;&lt;input type="time"&gt;&lt;br&gt;
+  &lt;label class="addon"&gt;search&lt;/label&gt;&lt;input type="search"&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt; &lt;input type="submit"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt; &lt;input type="submit"&gt;
+&lt;/form&gt;
+      </pre>
+      </section>
+    </div>
+  </div>
+</body>
+<script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
+<script src="jingyes.js"></script>
+<script src="doc.js"></script>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  <title>JingYes CSS FrameWork</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="jingyes.css" rel="stylesheet">
+  <link href="doc.css" rel="stylesheet">
+</head>
+<body class="flat">
+  <div class="span16 mid">
+    <nav class="span16" id="mainNav">
+      <dl class="bar">
+        <dt class="active"><a href="./" class="brand">静夜思</a></dt>
+        <dt><a href="getting-started.html">起步</a></dt>
+        <dt><a href="grid.html">网格</a></dt>
+        <dt><a href="base.html">基本CSS样式</a></dt>
+        <dt><a href="components.html">组件</a></dt>
+        <dt><a href="javascript.html">JavaScript插件</a></dt>
+        <dt><a href="about.html">关于</a></dt>
+      </dl>
+    </nav>
+  </div>
+  <div class="span16 mid">
+    <pre id="overview">
+      <b class="brand">JingYes</b>: 是一个基于 HTML5、CSS3 的前端框架，中文名 静夜思。在使用之前您需要了解以下几点：
+
+      <ul>
+        <li>浏览器必须支持 HTML5、CSS3</li>
+        <li>
+          JingYes是通过HTML标签和class组合进行设计的。这意味着JingYes的某些组件必须使用固定的HTML标签结构。
+        </li>
+        <li>JingYes不会对浏览器兼容性进行特殊处理，也不支持浏览器特征CSS写法，仅支持标准CSS下的浏览器前缀写法。换句话说：只采用标准写法。</li>
+        <li>JingYes上采用pt、em 作为单位而不是px。</li>
+        <li>JingYes采用 <code>display:inline-block</code> 用于布局。尽量避免使用 <code>float:float</code>　布局。这会对编码产生一些负面影响：
+          <ul>
+            <li>不在意这些空白造成的不整齐。您现在看到的页面就不在意整齐问题。</li>
+            <li>明了空白的影响, 正确使用空白。</li>
+            <li>JingYes 提供了一个辅助函数<code>clearTextNode()</code>用于处理一些简单情况。</li>
+            <li>不使用 JingYes</li>
+          </ul>
+        </li>
+      </ul>
+      JingYes 的追求：原生CSS、固定HTML标签、简洁。
+    </pre>
+  </div>
+</body>
+<script src="jingyes.js"></script>
+</html>
