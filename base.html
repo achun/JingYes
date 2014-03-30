@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>基本CSS样式 · JingYes CSS FrameWork</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="jingyes.css" rel="stylesheet">
+	<link href="css/jingyes.css" rel="stylesheet">
 	<link href="doc.css" rel="stylesheet">
 </head>
 <body>
@@ -27,7 +27,7 @@
     	<p>展示区是未使用 <code>class</code> 的效果</p>
     </pre>
     <div class="span5">
-      <nav class="span5" id="subnav">
+      <nav class="span5" id="localNav">
         <dl>
           <dt><a href="#headings">标题</a></dt>
           <dt><a href="#list">列表</a></dt>
@@ -44,14 +44,19 @@
       </nav>
     </div><div class="span11">
       <h1 id="Headings">Headings</h1>
-			<section>
-				<h1>Heading 1</h1>
-				<h2>Heading 2</h2>
-				<h3>Heading 3</h3>
-				<h4>Heading 4</h4>
-				<h5>Heading 5</h5>
-				<h6>Heading 6</h6>
-			</section>
+			<h1>一号字 Heading 1</h1>
+			<h1><small>小一号字 Heading 1</small></h1>
+			<h2>二号字 Heading 2</h2>
+			<h2><small>小二号字 Heading 2</small></h2>
+			<h3>三号字 Heading 3</h2>
+			<h3><small>小三号字 Heading 3</small></h3>
+			<h4>四号字 Heading 4</h2>
+			<h4><small>小四号字 Heading 4</small></h4>
+			<h5>五号字 Heading 5</h2>
+			<h5><small>小五号字 Heading 5</small></h5>
+			<h6>六号字 Heading 6</h2>
+			<h6><small>小六号字 Heading 6</small></h6>
+
 			<h1 id="list">列表</h1>
 			<div id="list" class="span3">
 				<h2>无序列表</h2>
@@ -110,8 +115,8 @@
 					<li>Ordered List</li>
 				</ol>
 			</pre>
-			<h1 id="script_pre">script.pre 标签</h1>
-			<script class="pre">前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。 
+			<h1 id="script_pre">.pre</h1>
+			<script type="text/plan" class="pre">前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。 
 换新行, 前导无空白。
     换新行, 前导4个空格符。
 	换新行, 前导1个tab符号。
@@ -147,13 +152,13 @@ p 标签 <br>
 	换新行, 前导1个tab符号。
 <span>span 标签</span> <em>em 标签</em> <i>i 标签</i> <b>b 标签</b> <code>code 标签</code> <a href="#">a 标签</a> <button>button</button>
 <p>
-script.pre 标签 <br>
-<script class="pre">前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。前导无空白。 
-换新行, 前导无空白。
-    换新行, 前导4个空格符。
-	换新行, 前导1个tab符号。
-<span>span 标签</span> <em>em 标签</em> <i>i 标签</i> <b>b 标签</b> <code>code 标签</code> <a href="#">a 标签</a> <button>button</button>
+.pre 标签 <br>
+<script type="go" class="pre">
+!(function(window,$){
+	"use strict";
+})(window,window.jQuery)
 </script>
+<small>small 标签</small>
 			</blockquote>
 			<h1 id="hr">hr 标签</h1>
 			<hr>
@@ -202,6 +207,6 @@ script.pre 标签 <br>
 	</div>
 </body>
 <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
-<script src="jingyes.js"></script>
+<script src="js/jingyes.js"></script>
 <script src="doc.js"></script>
 </html>

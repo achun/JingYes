@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>组件 · JingYes CSS FrameWork</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="jingyes.css" rel="stylesheet">
+	<link href="css/jingyes.css" rel="stylesheet">
 	<link href="doc.css" rel="stylesheet">
 </head>
 <body class="flat">
@@ -27,8 +27,9 @@
 			下列需要JavaScript配合才能显示效果。需要引入 jQuery库和 jingyes.js。一些效果是写在 css 文件里面，js 只是负责交互控制部分。另外一些是通过 js 操作 style 属性完成的。
 		</pre>
 		<div class="span5">
-		<nav class="span5" id="subnav">
+		<nav class="span5" id="localNav">
 			<dl class="accordion">
+				<dt><a href="#toggle">toggle class</a></dt>
 				<dt><a href="#accordion">手风琴</a></dt>
 				<dd>
 					<dl>
@@ -41,10 +42,23 @@
 		</nav>
 		</div>
 		<div class="span11">
+			<section id="toggle">
+				<h1>toggle class</h1>
+				<p>切换 DOM 元素的 class. 可以通过 <code>data-jy="partten.class"</code>. 前面的 partten 是 css 选择器, 最后的 .class 是要切换的 class.</p>
+				<div class="docs-example">
+					<button class="primary toggle" data-jy="body.flat">整个 body 圆角切换</button>
+					<button class="primary toggle" data-jy=".docs-example.flat">example 下的圆角切换</button>
+				</div>
+				<pre>
+&lt;button class="primary toggle" data-jy="body.flat"&gt;整个 body 圆角切换&lt;/button&gt;
+&lt;button class="primary toggle" data-jy=".docs-example.flat"&gt;example 下的圆角切换&lt;/button&gt;
+				</pre>
+				<p class="notify">注意上面相互的影响.</p>
+			</section>
 			<section id="accordion">
 				<h1>手风琴</h1>
 				<p>给导航加一个class accordion 就变成了手风琴效果，标记是 <code>nav dl.accordion</code> ，当然还要有 <code>dd dl</code>嵌套。左侧的子导航已经加上了这个效果，点击子导航中的“手风琴”就可以看到效果。</p>
-				<pre class="markup">
+				<pre>
 &lt;nav&gt;
   &lt;dl class="accordion"&gt;
     &lt;dt&gt;&lt;a href="#accordion"&gt;手风琴&lt;/a&gt;&lt;/dt&gt;
@@ -57,60 +71,62 @@
   &lt;/dl&gt;
 &lt;/nav&gt;
 				</pre>
-				<p class="info">展开、折叠效果写在 jingyes.css 中。如果您觉得使用 nav 有所不妥，可以用 <code>div.nav dl</code> 这种形式替代 <code>nav dl</code>。后续类似情况同理</p>
+				<p class="notify">展开、折叠效果写在 jingyes.css 中。如果您觉得使用 nav 有所不妥，可以用 <code>div.nav dl</code> 这种形式替代 <code>nav dl</code>。后续类似情况同理</p>
 			</section>
+
 			<section id="carousel">
-				<h1>轮播</h1>
-				<p>轮播和手风琴一样也是<code>nav dl</code>的变种。</p>
+				<h1>图片轮播</h1>
+				<p>图片轮播有固定的结构, 并使用 <code>class="carousel"</code>.
+				需要给 .carousel 的父元素设定固定的宽度或高度, 并设置 <code>overflow: hidden;</code>.
+				如果没有设置 overflow: hidden, 将自动按照横向轮播进行设置.
+				</p>
 				<div class="nav docs-example">
-					<dl class="carousel">
-						<dt><mark></mark>
+					<div class="carousel">
+						<div>
 							<img src="go1480x270.png">
-							<div>最简单的轮播</div>
-						</dt>
-						<dt><mark></mark>
+							<div><p>简单的轮播</p></div>
+						</div>
+						<div>
 							<a href="#">
 								<img src="go2480x270.png">
 							</a>
-							<div>第二播</div>
-						</dt>
-						<dt><mark></mark>
+							<div><p>第二播</p></div>
+						</div>
+						<div>
 							<a href="#">
 								<img src="go3480x270.png">
 							</a>
-							<div>第三播</div>
-						</dt>
-					</dl>
+							<div><p>第三播</p></div>
+						</div>
+					</div>
 				</div>
 				<pre>
-&lt;div class="nav"&gt;
-  &lt;dl class="carousel"&gt;
-    &lt;dt&gt;&lt;mark&gt;&lt;/mark&gt;
-      &lt;img src="go1480x270.png"&gt;
-      &lt;div&gt;最简单的轮播&lt;/div&gt;
-    &lt;/dt&gt;
-    &lt;dt&gt;&lt;mark&gt;&lt;/mark&gt;
-      &lt;a href="#"&gt;
-        &lt;img src="go2480x270.png"&gt;
-      &lt;/a&gt;
-      &lt;div&gt;第二播&lt;/div&gt;
-    &lt;/dt&gt;
-    &lt;dt&gt;&lt;mark&gt;&lt;/mark&gt;
-      &lt;a href="#"&gt;
-        &lt;img src="go3480x270.png"&gt;
-      &lt;/a&gt;
-      &lt;div&gt;第三播&lt;/div&gt;
-    &lt;/dt&gt;
-  &lt;/dl&gt;
+&lt;div class="carousel"&gt;
+	&lt;div&gt;
+		&lt;img src="go1480x270.png"&gt;
+		&lt;div&gt;&lt;p&gt;简单的轮播&lt;/p&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div&gt;
+		&lt;a href="#"&gt;
+			&lt;img src="go2480x270.png"&gt;
+		&lt;/a&gt;
+		&lt;div&gt;&lt;p&gt;第二播&lt;/p&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div&gt;
+		&lt;a href="#"&gt;
+			&lt;img src="go3480x270.png"&gt;
+		&lt;/a&gt;
+		&lt;div&gt;&lt;p&gt;第三播&lt;/p&gt;&lt;/div&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 				</pre>
 				<p>在这个例子中就使用了 <code>div.nav dl</code> 的结构替代nav。</p>
-				<p class="info">也许你注意到了这个轮播在最后一个图片过度到第一图片的时候，拉动的方向是不同的。静夜思认为不必在意这些微小的不同。这效果也很不错，不是么！</p>
+				<p class="notify">也许你注意到了这个轮播在最后一个图片过度到第一图片的时候，拉动的方向是不同的。静夜思认为不必在意这些微小的不同。这效果也很不错，不是么！</p>
 			</section>
 		</div>
 	</div>
 </body>
+<script src="js/jingyes.js"></script>
 <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
-<script src="jingyes.js"></script>
 <script src="doc.js"></script>
 </html>

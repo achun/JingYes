@@ -1,19 +1,22 @@
 body{
 	margin-bottom: 5em;
+    margin-left: auto;
+    margin-right: auto;
 }
 h1, h3, h3 {
     font-family: "Helvetica Neue",Helvetica,'microsoft yahei ui','microsoft yahei','simhei',Arial,sans-serif;
     font-weight: normal;
 }
+nav{position: static;}
 .affix {
     position: fixed;
 }
+
 #overview {
     margin-top: 30pt;
 	padding: 2em;
-	background-color:#262626;
-	background-image: linear-gradient(to bottom, #262626 0%,#777777 100%);
 	color: #EEE;
+    background-color:#1F8DD6;
 	white-space: pre-line;
 }
 
@@ -39,9 +42,9 @@ section h1{
     content: "MarkUp";
     margin: -4em 0 2em -1em;
 }
-.docs-example ~ pre{margin-top:4em; overflow: visible;}
-
-@media screen and (min-width: 450pt) {
+.docs-example ~ pre{margin-top:4em; overflow: visible;padding: 1em;}
+.notify{margin-top:1em;padding: 1em;}
+@media screen and (min-width: 440pt) {
     #localNav{
         padding-right: 1em;
     }
