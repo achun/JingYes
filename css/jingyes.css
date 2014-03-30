@@ -1,11 +1,4 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
-
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
-
 html {
   font-family: sans-serif;
   /* 1 */
@@ -13,24 +6,10 @@ html {
   /* 2 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
-
 }
-/**
- * Remove default margin.
- */
-
 body {
   margin: 0;
 }
-/* HTML5 display definitions
-   ========================================================================== */
-
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
-
 article,
 aside,
 details,
@@ -45,11 +24,6 @@ section,
 summary {
   display: block;
 }
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-
 audio,
 canvas,
 progress,
@@ -58,97 +32,43 @@ video {
   /* 1 */
   vertical-align: baseline;
   /* 2 */
-
 }
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-
 audio:not([controls]) {
   display: none;
   height: 0;
 }
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
- */
-
 [hidden],
 template {
   display: none;
 }
-/* Links
-   ========================================================================== */
-
-/**
- * Remove the gray background color from active links in IE 10.
- */
-
 a {
   background: transparent;
 }
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-
 a:active,
 a:hover {
   outline: 0;
 }
-/* Text-level semantics
-   ========================================================================== */
-
-/**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
-
 abbr[title] {
   border-bottom: 1px dotted;
 }
-/**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
-
 b,
 strong {
   font-weight: bold;
 }
-/**
- * Address styling not present in Safari and Chrome.
- */
-
 dfn {
   font-style: italic;
 }
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari, and Chrome.
- */
-
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
-/**
- * Address styling not present in IE 8/9.
- */
-
 mark {
-  background: yellow;
-  color: black;
+  background: #ff0;
+  color: #000;
 }
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-
 small {
   font-size: 80%;
 }
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-
 sub,
 sup {
   font-size: 75%;
@@ -162,53 +82,23 @@ sup {
 sub {
   bottom: -0.25em;
 }
-/* Embedded content
-   ========================================================================== */
-
-/**
- * Remove border when inside `a` element in IE 8/9/10.
- */
-
 img {
   border: 0;
 }
-/**
- * Correct overflow not hidden in IE 9/10/11.
- */
-
 svg:not(:root) {
   overflow: hidden;
 }
-/* Grouping content
-   ========================================================================== */
-
-/**
- * Address margin not present in IE 8/9 and Safari.
- */
-
 figure {
   margin: 1em 40px;
 }
-/**
- * Address differences between Firefox and other browsers.
- */
-
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
-/**
- * Contain overflow in all browsers.
- */
-
 pre {
   overflow: auto;
 }
-/**
- * Address odd `em`-unit font size rendering in all browsers.
- */
-
 code,
 kbd,
 pre,
@@ -216,21 +106,6 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
-/* Forms
-   ========================================================================== */
-
-/**
- * Known limitation: by default, Chrome and Safari on OS X allow very limited
- * styling of `select`, unless a `border` property is set.
- */
-
-/**
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
- */
-
 button,
 input,
 optgroup,
@@ -242,101 +117,46 @@ textarea {
   /* 2 */
   margin: 0;
   /* 3 */
-
 }
-/**
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
- */
-
 button {
   overflow: visible;
 }
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
-
 button,
 select {
   text-transform: none;
 }
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
-
 button,
 html input[type="button"],
-/* 1 */ input[type="reset"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
   /* 3 */
-
 }
-/**
- * Re-set default cursor for disabled elements.
- */
-
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-
 input {
   line-height: normal;
 }
-/**
- * It's recommended that you don't attempt to style these elements.
- * Firefox's implementation doesn't respect box-sizing, padding, or width.
- *
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
- */
-
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
-
 }
-/**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
-
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
-/**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
- *    (include `-moz` to future-proof).
- */
-
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -345,59 +165,27 @@ input[type="search"] {
   /* 2 */
   box-sizing: content-box;
 }
-/**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
- */
-
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-/**
- * Define consistent border, margin, and padding.
- */
-
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
-/**
- * 1. Correct `color` not being inherited in IE 8/9/10/11.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
-
 legend {
   border: 0;
   /* 1 */
   padding: 0;
   /* 2 */
-
 }
-/**
- * Remove default vertical scrollbar in IE 8/9/10/11.
- */
-
 textarea {
   overflow: auto;
 }
-/**
- * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
- */
-
 optgroup {
   font-weight: bold;
 }
-/* Tables
-   ========================================================================== */
-
-/**
- * Remove most spacing between table cells.
- */
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -407,13 +195,11 @@ th {
   padding: 0;
 }
 /*! JingYes CSS FrameWork | MIT License | github.com/achun/JingYes */
-
 /* scaffolding.less */
-
 html {
-  font-size: 62.5%;
+  font-size: 100%;
   -webkit-overflow-scrolling: touch;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 @media screen and (max-device-width: 360pt) {
   html {
@@ -427,7 +213,7 @@ body {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-size: 10.5pt;
   line-height: 1.5;
-  background-color: white;
+  background-color: #ffffff;
 }
 a {
   color: #3399cc;
@@ -438,7 +224,7 @@ a:hover {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted #333333;
+  outline: thin dotted #333;
 }
 img {
   max-width: 100%;
@@ -447,7 +233,7 @@ img {
 @media print {
   * {
     background: transparent !important;
-    color: black !important;
+    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -474,12 +260,8 @@ img {
   }
 }
 /* type.less */
-
 p {
   margin: 0 0 0.5em;
-}
-small {
-  font-size: 86.8453%;
 }
 strong {
   font-weight: bold;
@@ -511,47 +293,82 @@ h6 small {
   color: #999999;
 }
 h1 {
-  margin: 15pt 0 7.5pt;
-  font-size: 30pt;
-  font-size: 4rem;
+  margin: 13.2pt 0 8.8pt;
 }
 h2 {
-  margin: 18.75pt 0 11.25pt;
-  font-size: 22.5pt;
-  font-size: 3rem;
+  margin: 16.2pt 0 10.8pt;
 }
 h3 {
-  margin: 15pt 0 15pt;
-  font-size: 18pt;
-  font-size: 2.4rem;
+  margin: 19.2pt 0 12.8pt;
 }
 h4 {
-  margin: 7.5pt 0 7.5pt;
-  font-size: 15pt;
-  font-size: 2rem;
+  margin: 6pt 0 4pt;
 }
 h5 {
-  margin: 9.75pt 0 9.75pt;
-  font-size: 10.5pt;
-  font-size: 1.4rem;
+  margin: 8.1pt 0 5.4pt;
 }
 h6 {
-  margin: 10.5pt 0 10.5pt;
-  font-size: 9.156pt;
-  font-size: 1.2rem;
+  margin: 9.9pt 0 6.6pt;
 }
-h1 small {
-  font-size: 18.375pt;
+h1,
+.h1 {
+  font-size: 26pt;
+  font-size: 2.16666667rem;
 }
-h2 small {
-  font-size: 13.125pt;
+h2,
+.h2 {
+  font-size: 21pt;
+  font-size: 1.75rem;
+}
+h3,
+.h3 {
+  font-size: 16pt;
+  font-size: 1.33333333rem;
+}
+h4,
+.h4 {
+  font-size: 14pt;
+  font-size: 1.16666667rem;
+}
+h5,
+.h5 {
+  font-size: 10.5pt;
+  font-size: 0.875rem;
+}
+h6,
+.h6 {
+  font-size: 7.5pt;
+  font-size: 0.625rem;
+}
+h1 small,
+.sh1 {
+  font-size: 24pt;
+  font-size: 2rem;
+}
+h2 small,
+.sh2 {
+  font-size: 18pt;
+  font-size: 1.5rem;
 }
 h3 small,
+.sh3 {
+  font-size: 15pt;
+  font-size: 1.25rem;
+}
 h4 small,
-h6 small,
-h6 small {
-  font-size: 10.5pt;
+.sh4 {
+  font-size: 12pt;
   font-size: 1rem;
+}
+h5 small,
+.sh5 {
+  font-size: 9pt;
+  font-size: 0.75rem;
+}
+h6 small,
+.sh6 {
+  font-size: 6.5pt;
+  font-size: 0.54166667rem;
 }
 ul,
 ol {
@@ -577,10 +394,10 @@ dd {
   margin: 0;
 }
 hr {
-  margin: 1.5 0;
+  margin: 0.25em 0;
   border: 0;
   border-top: 0.75pt solid #eeeeee;
-  border-bottom: 0.75pt solid white;
+  border-bottom: 0.75pt solid #fff;
 }
 abbr[title] {
   cursor: help;
@@ -591,7 +408,7 @@ figure {
   margin: 1em 30pt;
 }
 fieldset {
-  border: 0.75 solid silver;
+  border: 0.75pt solid silver;
   margin: 0 2pt;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -603,16 +420,14 @@ blockquote {
 blockquote p {
   margin: 0;
   padding: 0;
-  font-size: 13.125pt;
+  font-size: 10.5pt;
+  font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.25;
   border: none;
 }
 blockquote small {
   color: #999999;
-}
-blockquote small::before {
-  content: '\2014 \00A0';
 }
 q::before,
 q::after,
@@ -626,7 +441,6 @@ address {
   font-style: normal;
 }
 /* grid.less */
-
 [class^="span"] {
   min-height: 7.5pt;
   vertical-align: top;
@@ -743,32 +557,29 @@ address {
   }
 }
 /* code.less */
-
 pre,
-script.pre {
+.pre {
   display: block;
   padding: 1em;
   margin: 0 0 1em;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-size: 9pt;
+  font-size: 0.75rem;
   line-height: 1.5;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;
-  background-color: #f8f8f8;
+  background-color: #eeeeee;
   border: 0.75pt solid rgba(0, 0, 0, 0.15);
   border-radius: 3pt;
-}
-.pre {
-  overflow: visible;
-  word-wrap: normal;
+  overflow: auto;
 }
 code {
-  display: inline-block;
   margin: 0 0.25em;
   padding: 0 0.5em;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-size: 0.8em;
+  font-size: 9pt;
+  font-size: 0.75rem;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;
@@ -782,7 +593,6 @@ pre ol {
   white-space: normal;
 }
 /* tables.less */
-
 table {
   max-width: 100%;
   background-color: transparent;
@@ -804,7 +614,7 @@ table.condensed td {
 .tables table {
   width: 100%;
   border-radius: 3pt;
-  margin-bottom: 1.5;
+  margin-bottom: 0.5em;
 }
 .tables table th,
 .tables table td {
@@ -826,13 +636,13 @@ table.condensed td {
   border-left: 0;
 }
 .tables table table {
-  background-color: white;
+  background-color: #ffffff;
 }
 .tables table tbody tr.success > td {
-  background-color: #111111;
+  background-color: #eeeeee;
 }
 .tables table tbody tr.error > td {
-  background-color: #111111;
+  background-color: #eeeeee;
 }
 .tables table tbody tr.warning > td {
   background-color: #eeeeee;
@@ -846,19 +656,18 @@ table.condensed td {
 }
 .tables table:not(.hover-none) tbody tr:hover > td,
 .tables table:not(.hover-none) tbody tr:hover > th {
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
 }
 .tables table:not(.hover-none) tbody tr.success:hover > td {
-  background-color: #040404;
+  background-color: #e1e1e1;
 }
 .tables table:not(.hover-none) tbody tr.error:hover > td {
-  background-color: #040404;
+  background-color: #e1e1e1;
 }
 .tables table:not(.hover-none) tbody tr.warning:hover > td {
   background-color: #e1e1e1;
 }
 /* forms.less */
-
 form {
   margin: 0;
   line-height: 3em;
@@ -874,6 +683,7 @@ legend {
   padding: 0;
   margin-bottom: 1em;
   font-size: 15.75pt;
+  font-size: 1.3125rem;
   line-height: 3;
   color: #333333;
   border: 0;
@@ -902,7 +712,7 @@ input[type="reset"],
 input[type="submit"] {
   color: #505050;
   padding: 0 0.5em;
-  background-color: white;
+  background-color: #ffffff;
 }
 input[type="image"] {
   width: auto;
@@ -1022,17 +832,11 @@ select:focus:invalid {
   border-color: #ee5f5b;
   box-shadow: none;
 }
-@media screen and (min-width: 576pt) {
-  
-}
 /* buttons.less */
-
 /* buttons */
-
 /*
 <button><i></i>button</button>
 */
-
 .button,
 button {
   height: 2em;
@@ -1042,7 +846,7 @@ button {
   color: #505050;
   border: 0.75pt solid #e6e6e6;
   border-radius: 3pt;
-  background-color: white;
+  background-color: #ffffff;
   display: inline-block;
   cursor: pointer;
   outline: 0;
@@ -1055,21 +859,21 @@ button {
 }
 .button:hover,
 button:hover,
-.button.split + i:empty:hover,
-button.split + i:empty:hover,
+.button.split + i:hover,
+button.split + i:hover,
 .button:focus,
 button:focus,
-.button.split + i:empty:focus,
-button.split + i:empty:focus,
+.button.split + i:focus,
+button.split + i:focus,
 .button:active,
 button:active,
-.button.split + i:empty:active,
-button.split + i:empty:active {
+.button.split + i:active,
+button.split + i:active {
   background-color: #f2f2f2;
   border-color: #e6e6e6;
 }
-.button.split + i:empty,
-button.split + i:empty {
+.button.split + i,
+button.split + i {
   margin-left: 0.75pt;
   cursor: pointer;
 }
@@ -1083,18 +887,17 @@ fieldset[disabled] .button,
 fieldset.disabled .button,
 fieldset[disabled] button,
 fieldset.disabled button,
-.button.disabled.split + i:empty,
-button[disabled].split + i:empty,
-button.disabled.split + i:empty,
-fieldset[disabled] .button.split + i:empty,
-fieldset.disabled .button.split + i:empty,
-fieldset[disabled] button.split + i:empty,
-fieldset.disabled button.split + i:empty {
+.button.disabled.split + i,
+button[disabled].split + i,
+button.disabled.split + i,
+fieldset[disabled] .button.split + i,
+fieldset.disabled .button.split + i,
+fieldset[disabled] button.split + i,
+fieldset.disabled button.split + i {
   cursor: not-allowed;
   box-shadow: none;
 }
 /* breadcrumb.less */
-
 .breadcrumb > b {
   display: inline-block;
   position: relative;
@@ -1103,13 +906,12 @@ fieldset.disabled button.split + i:empty {
 .breadcrumb > b:nth-child(n+2)::before {
   content: "/";
   margin: 0 0.25em;
-  color: #999999;
+  color: #333333;
 }
 /* pagination.less */
-
 .pagination {
   display: inline-block;
-  border: 0.75pt solid 0.75pt solid #e6e6e6;
+  border: 0.75pt solid #e6e6e6;
   border-radius: 3pt;
   line-height: 2;
 }
@@ -1120,10 +922,9 @@ fieldset.disabled button.split + i:empty {
 }
 .pagination > b:nth-child(n+2),
 .pagination > a:nth-child(n+2) {
-  border-left: 0.75pt solid 0.75pt solid #e6e6e6;
+  border-left: 0.75pt solid #e6e6e6;
 }
 /* nav.less */
-
 /** 
  * NAV
 nav
@@ -1134,10 +935,9 @@ nav
 nav
 	dl
  */
-
 nav dl {
   margin: 0;
-  background-color: #666666;
+  background-color: #eeeeee;
 }
 nav > dl,
 nav dt {
@@ -1145,13 +945,14 @@ nav dt {
   font-weight: normal;
 }
 nav dt {
-  color: #3399cc;
+  color: #a2a2a2;
   cursor: pointer;
   padding: 0.5em;
   line-height: 1.4287;
 }
 nav dt > i,
 nav dt > a {
+  color: #a2a2a2;
   display: block;
   font-style: normal;
 }
@@ -1159,23 +960,23 @@ nav dd {
   padding-left: 1em;
   border-width: 0.75pt;
   border-style: solid;
-  border-color: transparent white white;
+  border-color: transparent #ffffff #ffffff;
   background-color: rgba(0, 0, 0, 0.04);
 }
 nav dd dd {
   border-style: solid none none;
 }
 nav dl > dt {
-  color: #111111;
-  background-color: #666666;
   border: 0.75pt solid #e6e6e6;
+  border-color: #ffffff;
+  background-color: #eeeeee;
 }
 nav dl > dt.active,
 nav dl > dt:hover,
 nav dl > dt:focus,
 nav dl > dt:active {
-  background-color: gray;
-  border-color: #cccccc;
+  background-color: #e8e8e8;
+  border-color: #ffffff;
 }
 nav dl > dt:nth-child(n+2) {
   margin-top: 0.75pt;
@@ -1191,21 +992,20 @@ nav dl dl dt {
 }
 nav dl dl dt:hover {
   border-color: transparent;
-  background-color: #333333;
+  background-color: #2d3e50;
 }
 nav dl dl dt.divider::before {
   left: -0.75pt;
   padding-left: 1.5pt;
 }
 nav dl.bar {
-  background-color: #333333;
+  background-color: #2d3e50;
   border-radius: 3pt;
   padding-left: 1em;
 }
 nav dl.bar > dt {
-  color: #111111;
-  background-color: #333333;
-  border: 0.75pt solid transparent;
+  border: 0.75pt solid #e6e6e6;
+  background-color: transparent;
   display: inline-block;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -1217,7 +1017,7 @@ nav dl.bar > dt.active,
 nav dl.bar > dt:hover,
 nav dl.bar > dt:focus,
 nav dl.bar > dt:active {
-  background-color: #1a1a1a;
+  background-color: #1f2d3c;
 }
 nav dl.bar > dt > i,
 nav dl.bar > dt > a {
@@ -1273,82 +1073,36 @@ nav > dl.accordion > dt + dd dt {
   border-color: transparent;
   background-color: transparent;
 }
-nav > dl.carousel > dt {
-  background-color: transparent;
-  border: 0 none;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-nav > dl.carousel > dt img {
-  max-width: 999999px;
-  border-color: white;
-  cursor: pointer;
-}
-nav > dl.carousel > dt > div:nth-of-type(1) {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
-nav > dl.carousel > dt > i:empty {
-  width: 100%;
-  height: 20%;
-  bottom: 0;
-  opacity: 0.15;
-  display: block;
-  position: absolute;
-  background-color: black;
-}
-nav > dl.carousel > dt:nth-child(n+2) {
-  width: 0;
-  height: 0;
-}
-nav > dl.carousel > dd.control {
-  display: block;
-  position: absolute;
-}
-nav > dl.carousel > dd.control.left {
-  left: 0;
-  width: 3em;
-  height: 100%;
-}
-nav > dl.carousel > dd.control.right {
-  left: 0;
-  width: 3em;
-  height: 100%;
-}
 /**
  * Tabs
  nav
  	span, div
  */
-
 nav > header {
-  border-bottom: #f8f8f8 3pt solid;
+  border-bottom: #eeeeee 3pt solid;
 }
 nav > header > span {
   display: inline-block;
-  background: #333333;
-  border: #333333 1.5pt solid;
+  background-color: #2d3e50;
+  border: 0.75pt solid #eeeeee;
   border-bottom: none;
   padding: 0.5em 1em;
 }
+nav > header > span > a {
+  color: #a2a2a2;
+}
 nav > header > span:hover {
-  background: #111111;
-  border: #111111 1.5pt solid;
+  background-color: #00968f;
+  border: #226f66 0.75pt solid;
   border-bottom: none;
 }
 nav > header > span.active {
-  background: #f8f8f8;
-  border: #f8f8f8 1.5pt solid;
+  background-color: #eeeeee;
+  border: #eeeeee 0.75pt solid;
   border-bottom: none;
 }
 nav > div {
-  background: #f8f8f8;
+  background-color: #eeeeee;
   position: relative;
   padding: 0.5em 1em;
 }
@@ -1364,8 +1118,40 @@ nav.shadow > header > span.active {
 nav.shadow > div {
   box-shadow: 4.5pt 4.5pt 0pt 0 rgba(0, 0, 0, 0.3);
 }
+/* carousel.less */
+.carousel {
+  overflow: hidden;
+}
+.carousel > div {
+  display: inline-block;
+}
+.carousel > div img {
+  border-color: #eeeeee;
+  cursor: pointer;
+}
+.carousel > div > div {
+  height: 0;
+  position: relative;
+  line-height: 1;
+  top: -3em;
+}
+.carousel > div > div > p {
+  margin: 0;
+  padding: 1em;
+  position: relative;
+}
+.carousel > div > div > p:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: " ";
+  display: block;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.2;
+}
 /* blockboard.less */
-
 .blockboard {
   border: 0.75pt solid #dddddd;
   border-radius: 4.5pt;
@@ -1373,6 +1159,7 @@ nav.shadow > div {
 .blockboard > header {
   text-align: center;
   font-weight: 500;
+  font-size: 24pt;
   font-size: 2rem;
   border-bottom: 0.75pt solid #dddddd;
   padding: 0.5em;
@@ -1386,7 +1173,6 @@ nav.shadow > div {
   padding: 0.5em;
 }
 /* misc.less */
-
 .holder {
   cursor: default !important;
   color: #999999 !important;
@@ -1397,7 +1183,7 @@ nav.shadow > div {
   cursor: default;
 }
 .divider::before {
-  border-color: #999999;
+  border-color: #333333;
   border-style: solid;
   border-width: 0.75pt 0 0 0;
   content: "";
@@ -1437,7 +1223,7 @@ nav.shadow > div {
   position: absolute;
   border-left: 6pt solid transparent;
   border-right: 6pt solid transparent;
-  border-bottom: 6pt solid silver;
+  border-bottom: 6pt solid #c0c0c0;
   top: -6pt;
   left: 10%;
 }
@@ -1453,7 +1239,7 @@ nav.shadow > div {
   margin-top: 1pt;
   border-width: 3pt;
   border-style: solid;
-  border-color: silver transparent transparent;
+  border-color: #c0c0c0 transparent transparent;
   vertical-align: middle;
   opacity: 0.6;
 }
@@ -1483,13 +1269,13 @@ nav.shadow > div {
 .split + i {
   color: #505050;
   border-radius: 0 3pt 3pt 0;
-  background-color: white;
+  background-color: #ffffff;
 }
 .addon {
   color: #505050;
   border-right: none;
   border-radius: 3pt 0 0 3pt;
-  background-color: white;
+  background-color: #ffffff;
 }
 .addon + input {
   border-top-left-radius: 0;
@@ -1499,11 +1285,11 @@ nav.shadow > div {
   height: auto;
 }
 .linear {
-  background-color: white;
-  background-image: -moz-linear-gradient(90deg, #cccccc, white);
-  background-image: -webkit-linear-gradient(90deg, #cccccc, white);
-  background-image: -o-linear-gradient(90deg, #cccccc, white);
-  background-image: linear-gradient(90deg, #cccccc, white);
+  background-color: #ffffff;
+  background-image: -moz-linear-gradient(90deg, #cccccc, #ffffff);
+  background-image: -webkit-linear-gradient(90deg, #cccccc, #ffffff);
+  background-image: -o-linear-gradient(90deg, #cccccc, #ffffff);
+  background-image: linear-gradient(90deg, #cccccc, #ffffff);
   background-repeat: repeat-x;
 }
 .brand {
@@ -1605,7 +1391,7 @@ input.mini [class^="glyphicon-"]::before,
   border-width: 0;
 }
 .border-1 {
-  border: 0.75pt solid 0.75pt solid #e6e6e6;
+  border: 0.75pt solid #e6e6e6;
 }
 .border-none {
   border-style: none;
@@ -1670,72 +1456,75 @@ input.mini [class^="glyphicon-"]::before,
   border-radius: 0;
 }
 /* color.less */
-
-.fatal {
-  color: #111111;
+.bgp1 {
+  background-color: #008643;
 }
-.panic {
-  color: #111111;
+.bgp2 {
+  background-color: #288d42;
 }
-.alert {
-  color: #111111;
+.bgp3 {
+  background-color: #007238;
 }
-.error {
-  color: #111111;
+.bgp4 {
+  background-color: #59b252;
 }
-.report {
-  color: #111111;
+.bgp5 {
+  background-color: #2d3e50;
 }
-.notify {
-  color: #111111;
+.bga1 {
+  background-color: #00968f;
 }
-.info {
-  color: #111111;
+.bga2 {
+  background-color: #226f66;
 }
-.debug {
-  color: #111111;
+.bga3 {
+  background-color: #006758;
+}
+.bga4 {
+  background-color: #3ea5af;
+}
+.bga5 {
+  background-color: #70c5be;
+}
+.bgb1 {
+  background-color: #ff6000;
+}
+.bgb2 {
+  background-color: #ba6d2d;
+}
+.bgb3 {
+  background-color: #b54b07;
+}
+.bgb4 {
+  background-color: #f0a142;
+}
+.bgb5 {
+  background-color: #fec478;
+}
+.bgc1 {
+  background-color: #c4000f;
+}
+.bgc2 {
+  background-color: #c42d34;
+}
+.bgc3 {
+  background-color: #af0313;
+}
+.bgc4 {
+  background-color: #ff5840;
+}
+.bgc5 {
+  background-color: #e5736f;
 }
 html body .disabled,
 html body [disabled] {
-  color: #111111;
-}
-.primary,
-.primary + i,
-.primary + .split + i,
-.primary.addon + button,
-.primary.addon + .button {
   color: #eeeeee;
-  background-color: #3f92d2;
-  border: 0.75pt solid #2a78b4;
-}
-.primary.active,
-.primary + i.active,
-.primary + .split + i.active,
-.primary.addon + button.active,
-.primary.addon + .button.active,
-.primary:hover,
-.primary + i:hover,
-.primary + .split + i:hover,
-.primary.addon + button:hover,
-.primary.addon + .button:hover,
-.primary:focus,
-.primary + i:focus,
-.primary + .split + i:focus,
-.primary.addon + button:focus,
-.primary.addon + .button:focus,
-.primary:active,
-.primary + i:active,
-.primary + .split + i:active,
-.primary.addon + button:active,
-.primary.addon + .button:active {
-  background-color: #2a78b4;
-  border-color: #205c8b;
 }
 input[type="submit"],
 button[type="submit"] {
-  color: #eeeeee;
-  background-color: #3f92d2;
-  border: 0.75pt solid #2a78b4;
+  border: 0.75pt solid #e6e6e6;
+  border-color: #00968f;
+  background-color: #00968f;
 }
 input[type="submit"].active,
 button[type="submit"].active,
@@ -1745,134 +1534,235 @@ input[type="submit"]:focus,
 button[type="submit"]:focus,
 input[type="submit"]:active,
 button[type="submit"]:active {
-  background-color: #2a78b4;
-  border-color: #205c8b;
+  background-color: #007f78;
+  border-color: #007f78;
 }
-.warning,
+.fatal {
+  color: #eeeeee;
+  background-color: #c4000f;
+}
+.panic {
+  color: #eeeeee;
+  background-color: #c4000f;
+}
+.alert {
+  color: #eeeeee;
+  background-color: #c42d34;
+}
+.report {
+  color: #eeeeee;
+  background-color: #006758;
+}
+.notify {
+  color: #111111;
+  background-color: #fec478;
+}
+.debug {
+  color: #eeeeee;
+  background-color: #c4000f;
+}
+.primary {
+  color: #eeeeee;
+  background-color: #00968f;
+}
+button.primary,
+.button.primary,
+.primary + i,
+.primary.split + i,
+.primary.addon + button,
+.primary.addon + .button {
+  border: 0.75pt solid #e6e6e6;
+  border-color: #00968f;
+  background-color: #00968f;
+}
+button.primary.active,
+.button.primary.active,
+.primary + i.active,
+.primary.split + i.active,
+.primary.addon + button.active,
+.primary.addon + .button.active,
+button.primary:hover,
+.button.primary:hover,
+.primary + i:hover,
+.primary.split + i:hover,
+.primary.addon + button:hover,
+.primary.addon + .button:hover,
+button.primary:focus,
+.button.primary:focus,
+.primary + i:focus,
+.primary.split + i:focus,
+.primary.addon + button:focus,
+.primary.addon + .button:focus,
+button.primary:active,
+.button.primary:active,
+.primary + i:active,
+.primary.split + i:active,
+.primary.addon + button:active,
+.primary.addon + .button:active {
+  background-color: #007f78;
+  border-color: #007f78;
+}
+.warning {
+  color: #eeeeee;
+  background-color: #ff6000;
+}
+button.warning,
+.button.warning,
 .warning + i,
-.warning + .split + i,
+.warning.split + i,
 .warning.addon + button,
 .warning.addon + .button {
-  color: #eeeeee;
-  background-color: #ff9200;
-  border: 0.75pt solid #cc7500;
+  border: 0.75pt solid #e6e6e6;
+  border-color: #ff6000;
+  background-color: #ff6000;
 }
-.warning.active,
+button.warning.active,
+.button.warning.active,
 .warning + i.active,
-.warning + .split + i.active,
+.warning.split + i.active,
 .warning.addon + button.active,
 .warning.addon + .button.active,
-.warning:hover,
+button.warning:hover,
+.button.warning:hover,
 .warning + i:hover,
-.warning + .split + i:hover,
+.warning.split + i:hover,
 .warning.addon + button:hover,
 .warning.addon + .button:hover,
-.warning:focus,
+button.warning:focus,
+.button.warning:focus,
 .warning + i:focus,
-.warning + .split + i:focus,
+.warning.split + i:focus,
 .warning.addon + button:focus,
 .warning.addon + .button:focus,
-.warning:active,
+button.warning:active,
+.button.warning:active,
 .warning + i:active,
-.warning + .split + i:active,
+.warning.split + i:active,
 .warning.addon + button:active,
 .warning.addon + .button:active {
-  background-color: #cc7500;
-  border-color: #995800;
+  background-color: #ff4a00;
+  border-color: #ff4a00;
 }
-.error,
+.error {
+  color: #eeeeee;
+  background-color: #af0313;
+}
+button.error,
+.button.error,
 .error + i,
-.error + .split + i,
+.error.split + i,
 .error.addon + button,
 .error.addon + .button {
-  color: #111111;
-  background-color: #9a001e;
-  border: 0.75pt solid #670014;
+  border: 0.75pt solid #e6e6e6;
+  border-color: #af0313;
+  background-color: #af0313;
 }
-.error.active,
+button.error.active,
+.button.error.active,
 .error + i.active,
-.error + .split + i.active,
+.error.split + i.active,
 .error.addon + button.active,
 .error.addon + .button.active,
-.error:hover,
+button.error:hover,
+.button.error:hover,
 .error + i:hover,
-.error + .split + i:hover,
+.error.split + i:hover,
 .error.addon + button:hover,
 .error.addon + .button:hover,
-.error:focus,
+button.error:focus,
+.button.error:focus,
 .error + i:focus,
-.error + .split + i:focus,
+.error.split + i:focus,
 .error.addon + button:focus,
 .error.addon + .button:focus,
-.error:active,
+button.error:active,
+.button.error:active,
 .error + i:active,
-.error + .split + i:active,
+.error.split + i:active,
 .error.addon + button:active,
 .error.addon + .button:active {
-  background-color: #cd0028;
-  border-color: #ff0132;
+  background-color: #9b020c;
+  border-color: #9b020c;
 }
-.success,
+.success {
+  color: #eeeeee;
+  background-color: #59b252;
+}
+button.success,
+.button.success,
 .success + i,
-.success + .split + i,
+.success.split + i,
 .success.addon + button,
 .success.addon + .button {
-  color: #111111;
-  background-color: #2e8f00;
-  border: 0.75pt solid #1e5c00;
+  border: 0.75pt solid #e6e6e6;
+  border-color: #59b252;
+  background-color: #59b252;
 }
-.success.active,
+button.success.active,
+.button.success.active,
 .success + i.active,
-.success + .split + i.active,
+.success.split + i.active,
 .success.addon + button.active,
 .success.addon + .button.active,
-.success:hover,
+button.success:hover,
+.button.success:hover,
 .success + i:hover,
-.success + .split + i:hover,
+.success.split + i:hover,
 .success.addon + button:hover,
 .success.addon + .button:hover,
-.success:focus,
+button.success:focus,
+.button.success:focus,
 .success + i:focus,
-.success + .split + i:focus,
+.success.split + i:focus,
 .success.addon + button:focus,
 .success.addon + .button:focus,
-.success:active,
+button.success:active,
+.button.success:active,
 .success + i:active,
-.success + .split + i:active,
+.success.split + i:active,
 .success.addon + button:active,
 .success.addon + .button:active {
-  background-color: #3ec200;
-  border-color: #4ff500;
+  background-color: #439e3d;
+  border-color: #439e3d;
 }
-.info,
+.info {
+  color: #eeeeee;
+  background-color: #226f66;
+}
+button.info,
+.button.info,
 .info + i,
-.info + .split + i,
+.info.split + i,
 .info.addon + button,
 .info.addon + .button {
-  color: #111111;
-  background-color: #25567b;
-  border: 0.75pt solid #193b54;
+  border: 0.75pt solid #e6e6e6;
+  border-color: #226f66;
+  background-color: #226f66;
 }
-.info.active,
+button.info.active,
+.button.info.active,
 .info + i.active,
-.info + .split + i.active,
+.info.split + i.active,
 .info.addon + button.active,
 .info.addon + .button.active,
-.info:hover,
+button.info:hover,
+.button.info:hover,
 .info + i:hover,
-.info + .split + i:hover,
+.info.split + i:hover,
 .info.addon + button:hover,
 .info.addon + .button:hover,
-.info:focus,
+button.info:focus,
+.button.info:focus,
 .info + i:focus,
-.info + .split + i:focus,
+.info.split + i:focus,
 .info.addon + button:focus,
 .info.addon + .button:focus,
-.info:active,
+button.info:active,
+.button.info:active,
 .info + i:active,
-.info + .split + i:active,
+.info.split + i:active,
 .info.addon + button:active,
 .info.addon + .button:active {
-  background-color: #3171a2;
-  border-color: #408cc6;
+  background-color: #17584f;
+  border-color: #17584f;
 }

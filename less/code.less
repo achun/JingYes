@@ -1,10 +1,10 @@
 // Blocks of code
-pre,script.pre {
+pre,.pre {
   display: block;
   padding: 1em;
   margin: 0 0 1em;
   #font > #family > .monospace;
-  font-size: @font-size-base - 1.5; // 10.5pt to 9pt
+  .font-size(@font-size-base - 1.5);// 10.5pt to 9pt
   line-height: @line-height-base;
   word-break: break-all;
   word-wrap: break-word;
@@ -12,19 +12,14 @@ pre,script.pre {
   background-color: @pre-bgcolor;
   border: @pre-border;
   border-radius: @pre-radius;
-}
-
-.pre{
-  overflow: visible;
-  word-wrap: normal;
+  overflow: auto;
 }
 
 code{
-  display: inline-block;
   margin: 0 0.25em;
   padding: 0 0.5em;
   #font > #family > .monospace;
-  font-size: 0.8em; // 10.5pt to 9pt
+  .font-size(@font-size-base - 1.5);// 10.5pt to 9pt
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;

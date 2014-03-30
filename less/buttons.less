@@ -19,7 +19,7 @@
   font-weight: 500;
   vertical-align: middle;
   .box-sizing(content-box);
-  &,&.split + i:empty{
+  &,&.split + i{
     &:hover,
     &:focus,
     &:active {
@@ -27,7 +27,7 @@
           border-color: darken(@button-border-color, 10%);
     }
   }
-  &.split + i:empty {
+  &.split + i {
     margin-left: 0.75pt;
     cursor: pointer;
   }
@@ -45,7 +45,7 @@ fieldset.disabled .button,
 fieldset[disabled] button,
 fieldset.disabled button,
 {
-  &,&.split + i:empty {
+  &,&.split + i {
     cursor: not-allowed;
     box-shadow: none;
   }

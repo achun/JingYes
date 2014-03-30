@@ -1,52 +1,82 @@
-.fatal{
-	color:@color-fatal;
-}
-.panic{
-	color:@color-panic;
-}
-.alert{
-	color:@color-alert;
-}
-.error{
-	color:@color-error;
-}
-.report{
-	color:@color-report;
-}
-.notify{
-	color:@color-notify;
-}
-.info{
-	color:@color-info;
-}
-.debug{
-	color:@color-debug;
-}
 
+.bgp1{background-color:@p1;}
+.bgp2{background-color:@p2;}
+.bgp3{background-color:@p3;}
+.bgp4{background-color:@p4;}
+.bgp5{background-color:@p5;}
+
+.bga1{background-color:@a1;}
+.bga2{background-color:@a2;}
+.bga3{background-color:@a3;}
+.bga4{background-color:@a4;}
+.bga5{background-color:@a5;}
+
+.bgb1{background-color:@b1;}
+.bgb2{background-color:@b2;}
+.bgb3{background-color:@b3;}
+.bgb4{background-color:@b4;}
+.bgb5{background-color:@b5;}
+
+.bgc1{background-color:@c1;}
+.bgc2{background-color:@c2;}
+.bgc3{background-color:@c3;}
+.bgc4{background-color:@c4;}
+.bgc5{background-color:@c5;}
 // disabled
 html body .disabled,
 html body [disabled] {
   color: @color-disabled;
 }
 
+input[type="submit"],
+button[type="submit"],
+{
+  .btn-pseudo-states(@button-bgcolor-primary, @button-border-primary);
+}
+
+.fatal{
+  color:@color-fatal;
+  background-color: @bgcolor-fatal;
+}
+.panic{
+  color:@color-panic;
+  background-color: @bgcolor-panic;
+}
+.alert{
+  color:@color-alert;
+  background-color: @bgcolor-alert;
+}
+.report{
+  color:@color-report;
+  background-color: @bgcolor-report;
+}
+.notify{
+  color:@color-notify;
+  background-color: @bgcolor-notify;
+}
+.debug{
+  color:@color-debug;
+  background-color: @bgcolor-debug;
+}
+
+// Primary appears
 .primary{
-  &,+ i,
-  +.split+i,
+  color: @color-primary;
+  background-color: @bgcolor-primary;
+  button&,.button&,+ i,
+  &.split +i,
   &.addon + button,
   &.addon + .button,
   {
     .btn-pseudo-states(@button-bgcolor-primary, @button-border-primary);
   }
 }
-input[type="submit"],
-button[type="submit"],
-{
-  .btn-pseudo-states(@button-bgcolor-primary, @button-border-primary);
-}
 // Warning appears as orange
 .warning{
-  &,+ i,
-  +.split+i,
+  color: @color-warning;
+  background-color: @bgcolor-warning;
+  button&,.button&,+ i,
+  &.split +i,
   &.addon + button,
   &.addon + .button,
   {
@@ -55,8 +85,10 @@ button[type="submit"],
 }
 // error appear as red
 .error{
-  &,+ i,
-  +.split+i,
+  color: @color-error;
+  background-color: @bgcolor-error;
+  button&,.button&,+ i,
+  &.split +i,
   &.addon + button,
   &.addon + .button,
   {
@@ -65,8 +97,10 @@ button[type="submit"],
 }
 // Success appears as green
 .success{
-  &,+ i,
-  +.split+i,
+  color: @color-success;
+  background-color: @bgcolor-success;
+  button&,.button&,+ i,
+  &.split +i,
   &.addon + button,
   &.addon + .button,
   {
@@ -75,8 +109,10 @@ button[type="submit"],
 }
 // Info appears as blue-green
 .info{
-  &,+ i,
-  +.split+i,
+  color: @color-info;
+  background-color: @bgcolor-info;
+  button&,.button&,+ i,
+  &.split +i,
   &.addon + button,
   &.addon + .button,
   {

@@ -75,6 +75,9 @@
   }
 }
 
+.font-size(@pt){
+  font-size: @font-size-base *  @pt  /10.5; font-size:  unit(@pt)  /12rem;
+}
 
 // CSS3
 .border-top-radius(@radius) {
@@ -277,46 +280,43 @@
 
 // Button psuedo states
 // -------------------------
-// 默认 单边框透明
 .btn-pseudo-states( @background-color) {
-  @amount: 10%;
-  color: contrast(@background-color, @grayDarker, @grayLighter);
-  background-color: @background-color;
-  border: 0.75pt solid transparent;
+  @angle: 15;
+  border: @button-border;
+  border-color: transparent;
+  background-color: transparent;
   &.active,
   &:hover,
   &:focus,
   &:active {
-    background-color: darken(@background-color, @amount);
+    background-color: softlight(@background-color, #505050);
   }
 }
 
 .btn-pseudo-states(@background-color, @border-color) {
   @amount: 10%;
-  color: contrast(@background-color, @grayDarker, @grayLighter);
+  border: @button-border;
+  border-color: @border-color;
   background-color: @background-color;
-  border: 0.75pt solid darken(@border-color, @amount);
   &.active,
   &:hover,
   &:focus,
   &:active {
-    background-color: contrast(@background-color, lighten(@background-color, @amount), darken(@background-color, @amount));
-        border-color: contrast(@border-color, lighten(@border-color, @amount+10), darken(@border-color, @amount+10));
+    background-color: softlight(@background-color, #505050);
+        border-color: softlight(@border-color, #505050);
   }
 }
 
 
 // Grid System
-
-#grid( ){
+#grid(){
+  // Generate .spanX and .offsetX
   .spanX(@index) when (@index > 0) {
-    (~".span@{index}") { .span(@index); }
+    .span@{index} {
+      width: @grid-column-width * @index;
+    }
     .spanX(@index - 1);
   }
-  .spanX(0) {}
-  .span(@columns) {
-    width: @grid-column-width * @columns;
-  }
-  // Generate .spanX and .offsetX
+  .spanX(0){}
   .spanX(@grid-max-columns);
 }

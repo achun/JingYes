@@ -20,11 +20,12 @@ nav {
 	}
 
 	dt {
-		color: @link-color;
+		color: @nav-color;
 		cursor: pointer;
 		padding: 0.5em;
 		line-height: 1.4287; // 36px , .bar 50px
 		>i,>a{
+			color: @nav-color;
 			display: block;
 			font-style: normal;
 		}
@@ -145,65 +146,6 @@ nav > dl.accordion{
   }
 }
 
-// carousel
-// 图片轮播需要配合js完成
-nav > dl.carousel {
-	> dt {
-		background-color: transparent;
-		border:0 none;
-		display: inline-block;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		img {
-			max-width: 999999px;
-			border-color: @color-primary;
-			cursor: pointer;
-		}
-		// 轮播文字
-		>div:nth-of-type(1) {
-			position: absolute;
-			bottom:0;
-			width: 100%;
-			padding: 0;
-			margin: 0;
-			overflow: hidden;
-		}
-
-		// 文字背景
-		>i:empty{
-			width: 100%;
-			height: 20%;
-			bottom: 0;
-			.opacity(15);
-			display: block;
-			position: absolute;
-			background-color: #000;
-		}
-	}
-
-	> dt:nth-child(n+2) {
-		width: 0;
-		height:0;
-	}
-
-	// 动态生成轮播控制
-	> dd.control{
-		display: block;
-		position: absolute;
-	}
-	> dd.control.left{
-		left:0;
-		width: 3em;
-		height: 100%;
-	}
-	> dd.control.right{
-		left:0;
-		width: 3em;
-		height: 100%;
-	}
-}
-
 /**
  * Tabs
  nav
@@ -214,24 +156,27 @@ nav {
 		border-bottom: @navtabs-header-bottom;
 		> span {
 			display: inline-block;
-			background: @navtabs-background;
+			background-color: @navtabs-bgcolor;
 			border: @navtabs-border;
 			border-bottom:none;
 			padding: 0.5em 1em;
+			>a{
+				color: @nav-color;
+			}
 		}
 		> span:hover {
-			background: @navtabs-background-hover;
+			background-color: @navtabs-bgcolor-hover;
 			border: @navtabs-border-hover;
 			border-bottom:none;
 		}
 		> span.active {
-			background: @navtabs-background-activeClass;
+			background-color: @navtabs-bgcolor-activeClass;
 			border: @navtabs-border-activeClass;
 			border-bottom:none;
 		}
 	}
 	> div {
-		background: @navtabs-body-background;
+		background-color: @navtabs-body-bgcolor;
 		position: relative;
 		padding: 0.5em 1em;
 		>div{
